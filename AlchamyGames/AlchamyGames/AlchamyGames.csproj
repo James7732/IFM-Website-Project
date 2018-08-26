@@ -67,12 +67,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ExternalStyleSheet.css" />
+    <Content Include="JavaScriptNeeds.js" />
+    <Content Include="LandingPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlchemyGames.Master.cs">
+      <DependentUpon>AlchemyGames.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlchemyGames.Master.designer.cs">
+      <DependentUpon>AlchemyGames.Master</DependentUpon>
+    </Compile>
+    <Compile Include="LandingPage.aspx.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LandingPage.aspx.designer.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlchemyGames.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AlchemyGames.master.cs" Inherits="AlchamyGames.AlchemyGames" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="ExternalStyleSheet.css">
+    <script type="text/javascript" src="JavaScriptNeeds.js"></script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo"><span>Alchemy</span>Games</div>
+        <ul style="list-style: none">
+            <li><a href="#link">LOG IN</a></li>
+            <li><a href="#home">LINK</a></li>
+            <li><a href="#home">LINK</a></li>
+            <li><a href="#home">LINK</a></li>
+        </ul>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="rela-block banner">
+    </div>
+
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+</body>
+</html>
