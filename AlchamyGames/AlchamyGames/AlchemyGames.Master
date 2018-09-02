@@ -7,17 +7,23 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-    <link rel="stylesheet" type="text/css" href="ExternalStyleSheet.css">
+    <!--<link rel="stylesheet" type="text/css" href="ExternalStyleSheet.css">-->
+    <link rel="stylesheet/less" type="text/css" href="StyleSheet1.less">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js" ></script>
     <script type="text/javascript" src="JavaScriptNeeds.js"></script>
+    
 </head>
 <body>
     <div class="navbar">
         <div class="logo"><span>Alchemy</span>Games</div>
         <ul style="list-style: none">
             <li><a href="#link">LOG IN</a></li>
-            <li><a href="#home">LINK</a></li>
-            <li><a href="#home">LINK</a></li>
-            <li><a href="#home">LINK</a></li>
+            <li><a href="#home">LOG OUT</a></li>
+            <li><a href="#home">SHOPPING CART</a></li>
+            <li><a href="#home">ADMIN</a></li>
+            <li><a href="#home">ABOUT</a></li>
+            <li><a href="#home">FAQ</a></li>
+            <li><a href="#home">GAMES</a></li>
         </ul>
     </div>
 
@@ -31,10 +37,27 @@
     <div class="rela-block banner">
     </div>
 
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        </asp:ContentPlaceHolder>
-    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
 
+    <hr style="width: 97%">
+    <div>
+        <table>
+            <tr style="width: 100%; height: 3%">
+                <th>AlchemyGame</th>
+                <th>Our Products</th>
+                <th>Help</th>
+            </tr>
+            <tr>
+                <td style="list-style: none">
+                    <ul>
+                        <li>About Us</li>
+                        <li>FAQ</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
