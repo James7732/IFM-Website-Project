@@ -1,7 +1,0 @@
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\bin\AlchamyGames.dll.config
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\bin\AlchamyGames.dll
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\bin\AlchamyGames.pdb
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\obj\Debug\AlchamyGames.csprojAssemblyReference.cache
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\obj\Debug\AlchamyGames.csproj.CoreCompileInputs.cache
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\obj\Debug\AlchamyGames.dll
-C:\Users\James\OneDrive - University of Johannesburg\Comp Sci\2018\Semester 2\Git-local-repo\IFM-Website-Project\AlchamyGames\AlchamyGames\obj\Debug\AlchamyGames.pdb
