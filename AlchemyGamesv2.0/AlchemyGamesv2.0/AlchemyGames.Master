@@ -47,19 +47,18 @@
                 <div class="main-navigation">
                     <button class="toggle-menu"><i class="fa fa-bars"></i></button>
                     <ul class="menu">
-                        <li class="menu-item home current-menu-item"><a href="index.html"><i class="icon-home"></i></a></li>
-                        <li><a href="products.html">Accessories</a></li>
-                        <li><a href="products.html">Promotions</a></li>
-                        <li class="menu-item"><a href="products.html">PC</a></li>
-                        <li class="menu-item"><a href="products.html">Playstation</a></li>
-                        <li class="menu-item"><a href="products.html">Xbox</a></li>
-                        <li class="menu-item"><a href="products.html">Wii</a></li>
+                        <li class="menu-item home current-menu-item"><a href="index.aspx"><i class="icon-home"></i></a></li>
+                        <li><a href="products.aspx">Promotions</a></li>
+                        <li class="menu-item"><a href="products.aspx">PC</a></li>
+                        <li class="menu-item"><a href="products.aspx">Playstation</a></li>
+                        <li class="menu-item"><a href="products.aspx">Xbox</a></li>
+                        <li class="menu-item"><a href="products.aspx">Admin</a></li>
                     </ul>
                     <!-- .menu -->
 
                     <div style="margin-left: 50%; margin-top: 20px; position: absolute;">
-                        <a href="cart.html" class="cart"><i class="icon-cart"></i>0 items in cart</a>
-                        <a href="#" class="login-button">Login/Register</a>
+                        <a href="cart.aspx" class="cart"><i class="icon-cart"></i>0 items in cart</a>
+                        <a href="Login.aspx" class="login-button">Login/Register</a>
                     </div>
                     <!--<img src="images/Project - Drawing 1_2.png" alt="" class="logo">-->
                     <div class="search-form">
@@ -159,8 +158,8 @@
 
 
 
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <!--<script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/plugins.js"></script>-->
     <script src="js/app.js"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ let container = document.getElementById('container');
 let leftSlider = document.getElementById('left-col');
 // console.log(leftSlider);
 let down_button = document.getElementById('down_button');
+let up_button = document.getElementById('up_button');
 // let caption = document.getElementById('slider-caption');
 // let caption_heading = caption.querySelector('caption-heading');
 
@@ -39,6 +40,13 @@ down_button.addEventListener('click', function (e) {
     clearInterval(autoplay);
     nextSlide();
     autoplay;
+});
+
+up_button.addEventListener('click', function (e) {
+    e.preventDefault();
+    clearInterval(autoplay);
+    nextSlide();
+    autoplay();
 });
 
 for (let i = 0; i < slide_data.length; i++) {
