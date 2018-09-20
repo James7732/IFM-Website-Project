@@ -71,8 +71,8 @@
                             <h3 class="product-title"><a href="#">Grand Theft Auto V</a></h3>
                             <small class="price">$19.00</small>
                             <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                            <a href="#" class="button">Add to cart</a>
-                            <a href="#" class="button muted">Read Details</a>
+                            <a href="cart.aspx" class="button">Add to cart</a>
+                            <a href="Single.aspx" class="button muted">Read Details</a>
                         </div>
                     </div>
                     <!-- .product -->
@@ -86,7 +86,7 @@
                             <h3 class="product-title"><a href="#">Need for Speed rivals</a></h3>
                             <small class="price">$19.00</small>
                             <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                            <a href="#" class="button">Add to cart</a>
+                            <a href="cart.aspx" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
                     </div>

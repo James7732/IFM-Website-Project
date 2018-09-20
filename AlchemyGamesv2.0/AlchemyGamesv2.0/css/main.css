@@ -195,6 +195,10 @@ iframe {
   width: 100%;
 }
 
+.login100-form a {
+    text-decoration: none;
+}
+
 .login100-form-title {
   display: block;
   font-family: Poppins-Bold;
@@ -461,8 +465,8 @@ iframe {
 }
 
 .login100-social-item:hover {
-  color: #fff;
-  background-color: #333333;
+    color: #fff;
+    background-color: #333333;
 }
 
 /*//////////////////////////////////////////////////////////////////

@@ -47,7 +47,7 @@
                 <div class="main-navigation">
                     <button class="toggle-menu"><i class="fa fa-bars"></i></button>
                     <ul class="menu">
-                        <li class="menu-item home current-menu-item"><a href="index.aspx"><i class="icon-home"></i></a></li>
+                        <li class="menu-item home current-menu-item"><a href="LandingPage.aspx"><i class="icon-home"></i></a></li>
                         <li><a href="products.aspx">Promotions</a></li>
                         <li class="menu-item"><a href="products.aspx">PC</a></li>
                         <li class="menu-item"><a href="products.aspx">Playstation</a></li>
