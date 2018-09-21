@@ -152,6 +152,7 @@
     <Content Include="js\plugins.js" />
     <Content Include="LandinPage.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Single.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="style.css" />
@@ -195,6 +196,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
     <Compile Include="Single.aspx.cs">

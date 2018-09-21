@@ -22,9 +22,10 @@ namespace AlchemyGamesv2._0
 
             var db = new AlchemyLinkDataContext();
 
-            var user = from User u in db.Users
-                       where u.Email.Equals(email)
-                       select u;
+                var user = from User u in db.Users
+                           where u.Email.Equals(email)
+                           select u;
+            
         }
     }
 }
