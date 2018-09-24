@@ -13,13 +13,22 @@ namespace AlchemyGamesv2._0 {
     public partial class Login {
         
         /// <summary>
-        /// username control.
+        /// userMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl userMsg;
+        
+        /// <summary>
+        /// email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
         
         /// <summary>
         /// password control.

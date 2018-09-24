@@ -8,17 +8,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-    <title>Ecommerce Video Game | Cart</title>
+    <title>Alchemy Games</title>
 
     <!-- Loading third party fonts -->
     <link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400,700|" rel="stylesheet" type="text/css">
     <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="fonts/lineo-icon/style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet/less" type="text/css" href="less/bannerslider.less">
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
 
     <!-- Loading main css file -->
-    <link rel="stylesheet" href="style.css">
+    <link href="css/Alchemy.css" rel="stylesheet" />
+    <!-- Loading css for banner -->
+    <link rel="stylesheet/less" type="text/css" href="less/bannerslider.less">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
 
     <!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -27,139 +28,91 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body class="slider-collapse">
-    <div id="site-content">
-        <div class="site-header">
-            <div class="container">
-                <!--<a href="index.html" id="branding">
-						<img src="images/Project - Drawing 1_2.png" alt="" class="logo">
+<body>
+    <form id="form1" runat="server">
+        <div>
+            
+            <div id="site-content">
+			<div class="site-header">
+				<div class="container">
+					<a href="HomePage.aspx" id="branding">
+						<img src="Images/Icon.png" alt="" class="logo">
+                        <!-- Icon made by [www.smashicons.com] from www.flaticon.com -->
 						<div class="logo-text">
 							<h1 class="site-title">Alchemy Games</h1>
-							<small class="site-description">Gaming reimagined</small>
+							<small class="site-description">Fall Into The Game</small>
 						</div>
-					</a> <!-- #branding -->
+					</a>
 
-                <!--<div class="right-section pull-right">
-						<a href="cart.html" class="cart"><i class="icon-cart"></i> 0 items in cart</a>
-						<a href="#" class="login-button">Login/Register</a>
-					</div> <!-- .right-section -->
+                    <br />
 
-                <div class="main-navigation">
-                    <button class="toggle-menu"><i class="fa fa-bars"></i></button>
-                    <ul class="menu">
-                        <li class="menu-item home current-menu-item"><a href="LandingPage.aspx"><i class="icon-home"></i></a></li>
-                        <li><a href="products.aspx">Promotions</a></li>
-                        <li class="menu-item"><a href="products.aspx">PC</a></li>
-                        <li class="menu-item"><a href="products.aspx">Playstation</a></li>
-                        <li class="menu-item"><a href="products.aspx">Xbox</a></li>
-                        <li class="menu-item"><a href="products.aspx">Admin</a></li>
-                    </ul>
-                    <!-- .menu -->
+                    <br />
 
-                    <div style="margin-left: 50%; margin-top: 20px; position: absolute;">
-                        <a href="cart.aspx" class="cart"><i class="icon-cart"></i>0 items in cart</a>
-                        <a href="Login.aspx" class="login-button">Login/Register</a>
-                    </div>
-                    <!--<img src="images/Project - Drawing 1_2.png" alt="" class="logo">-->
-                    <div class="search-form">
-                        <label>
-                            <img src="images/icon-search.png"></label>
-                        <input type="text" placeholder="Search...">
-                    </div>
-                    <!-- .search-form -->
+					<div class="right-section pull-right">
+						<a id="cart" runat="server" href="Cart.aspx" class="cart"><i class="icon-cart"></i> Cart</a>
+						<a id="login" runat ="server" href="Login.aspx">Login</a>
+                        <a id="logout" runat ="server" href="Login.aspx">Logout</a>
+						<!--<a id="register" runat="server" href="Register.aspx">Register</a>-->
+                        <a id="account" runat="server" href="Account.aspx">My Account</a>
+                        <a href="Contact.aspx">Contact Us</a>
+                        <a id="adminPage" runat ="server" href="Admin.aspx">Admin</a>
+					</div>
 
-                    <div class="mobile-navigation"></div>
-                    <!-- .mobile-navigation -->
-                </div>
-                <!-- .main-navigation -->
-            </div>
-            <!-- .container -->
+					<div class="main-navigation">
+						<button class="toggle-menu"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li runat="server" id="HomeNavBtn" class="menu-item home current-menu-item"><a href="HomePage.aspx"><i class="icon-home"></i></a></li>
+							<li runat="server" id="PCNavBtn" class="menu-item"><a href="Products.aspx?ID=PC">PC</a></li>
+							<li runat="server" id="PSNavBtn" class="menu-item"><a href="PlayStation.aspx?ID=PlayStation">PlayStation</a></li>
+							<li runat="server" id="xboxNavBtn" class="menu-item"><a href="Xbox.aspx?ID=Xbox">Xbox</a></li>
+							<li runat="server" id="nintendoNavBtn" class="menu-item"><a href="Nintendo.aspx?ID=Nintendo">Nintendo</a></li>
+
+						</ul>
+
+						<div class="mobile-navigation"></div>
+					</div>
+
+					<div class="breadcrumbs">
+						<div class="container">
+							<a> </a>
+							<span> </span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+			<div class="site-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-2">
+							<div class="widget">
+								<h3 class="widget-title">Navigation</h3>
+								<ul class="no-bullet">
+									<li><a href="HomePage.aspx"> <font color="#e73515"> Home </font> </a></li>
+									<li><a href="Login.aspx"> <font color="#e73515"> Login </font> </a></li>
+									<li><a href="Register.aspx"> <font color="#e73515"> Register </font> </a></li>
+									<li><a href="Account.aspx"> <font color="#e73515"> My Account </font> </a></li>
+									<li><a href="AddAGame.aspx"> <font color="#e73515"> Add A Game </font> </a></li>
+								</ul>
+							</div>
+						</div>
+														
+					</div>
+
+					<div class="colophon">
+						<div class="copy"> <font color="F0F00F"> Alchemy Games By The StormTroopers </font> </div>
+						<!-- Template designed by Themezy -->
+					</div>
+				</div>
+			</div> 
+		</div>
+
+		<div class="overlay"></div>
+
         </div>
-        <!-- .site-header -->
-
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-
-
-        <div class="site-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div class="widget">
-                            <h3 class="widget-title">Information</h3>
-                            <ul class="no-bullet">
-                                <li><a href="#">Site map</a></li>
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                        <!-- .widget -->
-                    </div>
-                    <!-- column -->
-                    <div class="col-md-2">
-                        <div class="widget">
-                            <h3 class="widget-title">Consumer Service</h3>
-                            <ul class="no-bullet">
-                                <li><a href="#">Secure</a></li>
-                                <li><a href="#">Shipping &amp; Returns</a></li>
-                                <li><a href="#">Shipping</a></li>
-                                <li><a href="#">Orders &amp; Returns</a></li>
-                                <li><a href="#">Group Sales</a></li>
-                            </ul>
-                        </div>
-                        <!-- .widget -->
-                    </div>
-                    <!-- column -->
-                    <div class="col-md-2">
-                        <div class="widget">
-                            <h3 class="widget-title">My Account</h3>
-                            <ul class="no-bullet">
-                                <li><a href="#">Login/Register</a></li>
-                                <li><a href="#">Settings</a></li>
-                                <li><a href="#">Cart</a></li>
-                                <li><a href="#">Order Tracking</a></li>
-                                <li><a href="#">Logout</a></li>
-                            </ul>
-                        </div>
-                        <!-- .widget -->
-                    </div>
-                    <!-- column -->
-                    <div class="col-md-6">
-                        <div class="widget">
-                            <h3 class="widget-title">Join our newsletter</h3>
-                            <form action="#" class="newsletter-form">
-                                <input type="text" placeholder="Enter your email...">
-                                <input type="submit" value="Subsribe">
-                            </form>
-                        </div>
-                        <!-- .widget -->
-                    </div>
-                    <!-- column -->
-                </div>
-                <!-- .row -->
-
-                <div class="colophon">
-                    <div class="copy">Copyright 2014 Company name. Designed by Themezy. All rights reserved.</div>
-                    <div class="social-links square">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                        <a href="#"><i class="fa fa-pinterest"></i></a>
-                    </div>
-                    <!-- .social-links -->
-                </div>
-                <!-- .colophon -->
-            </div>
-            <!-- .container -->
-        </div>
-        <!-- .site-footer -->
-    </div>
-
-
-
-    <!--<script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/plugins.js"></script>-->
-    <script src="js/app.js"></script>
+    </form>
 </body>
 </html>

@@ -11,7 +11,18 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var pageType = Request.QueryString["ID"];
 
+            var db = new AlchemyLinkDataContext();
+
+            dynamic games = from g in db.Products
+                            where g.Platfrom.Equals(pageType)
+                            select g;
+            
+            foreach(Product prod in games)
+            {
+
+            }
         }
     }
 }

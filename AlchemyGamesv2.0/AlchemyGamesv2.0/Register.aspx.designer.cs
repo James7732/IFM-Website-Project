@@ -13,13 +13,31 @@ namespace AlchemyGamesv2._0 {
     public partial class Register {
         
         /// <summary>
+        /// Usermsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Usermsg;
+        
+        /// <summary>
         /// userEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText userEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl userEmail;
+        
+        /// <summary>
+        /// username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText username;
         
         /// <summary>
         /// firstname control.
@@ -46,7 +64,7 @@ namespace AlchemyGamesv2._0 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText phonenumber;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl phonenumber;
         
         /// <summary>
         /// password control.

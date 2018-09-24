@@ -12,20 +12,28 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["Admin"] = null;
         }
 
         protected void Login_ServerClick(object sender, EventArgs e)
         {
-            var email = username.Value;
+            var Email = email.Value;
             var Password = Secrecy.computeHash(password.Value);
 
             var db = new AlchemyLinkDataContext();
 
-                var user = from User u in db.Users
-                           where u.Email.Equals(email)
-                           select u;
-            
+            var user = (from User u in db.Users
+                        where u.Email.Equals(Email) && u.Password.Equals(Password)
+                        select u).FirstOrDefault();
+           
+            if(user != null)
+            {
+                Session["Admin"] = user.Admin;
+                Response.Redirect("HomePage.aspx");
+            } else
+            {
+                userMsg.InnerHtml = "<h1 style=\"color: red\">User details not found. Please try again.</h1>";
+            }
         }
     }
 }

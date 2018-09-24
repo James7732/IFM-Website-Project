@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AlchemyGames.Master" AutoEventWireup="true" CodeBehind="LandinPage.aspx.cs" Inherits="AlchemyGamesv2._0.LandinPage" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AlchemyGames.Master" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="AlchemyGamesv2._0.LandinPage" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -18,7 +18,7 @@
         <script type="text/javascript" src="js/bannerslider.js"></script>
     </div>
 
-    <main class="main-content">
+    <main class="main-content" style="background-color: #1a374b">
         <div class="container">
             <div class="page">
                 <section>

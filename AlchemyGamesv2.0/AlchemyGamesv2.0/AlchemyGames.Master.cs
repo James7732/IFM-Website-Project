@@ -11,7 +11,29 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Admin"] != null)
+            {
+                if (!(bool)Session["Admin"])
+                {
+                    login.Visible = false;
+                    logout.Visible = true;
+                    adminPage.Visible = false;
+                    account.Visible = true;
+                } else
+                {
+                    logout.Visible = true;
+                    login.Visible = false;
+                    adminPage.Visible = true;
+                    account.Visible = true;
+                }
+            } else
+            {
+                login.Visible = true;
+                logout.Visible = false;
+                register.Visible = true;
+                adminPage.Visible = false;
+                account.Visible = false;
+            }
         }
     }
 }

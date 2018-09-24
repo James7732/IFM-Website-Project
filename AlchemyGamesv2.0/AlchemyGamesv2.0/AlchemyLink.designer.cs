@@ -118,7 +118,7 @@ namespace AlchemyGamesv2._0
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[User]")]
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
 	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
@@ -134,7 +134,21 @@ namespace AlchemyGamesv2._0
 		
 		private string _Surname;
 		
-		private System.Nullable<int> _Phone;
+		private string _Phone;
+		
+		private bool _Admin;
+		
+		private string _Username;
+		
+		private string _PostalAdress;
+		
+		private string _Suberb;
+		
+		private string _City;
+		
+		private string _Province;
+		
+		private string _PostalCode;
 		
 		private EntitySet<Order> _Orders;
 		
@@ -154,8 +168,22 @@ namespace AlchemyGamesv2._0
     partial void OnFirstNameChanged();
     partial void OnSurnameChanging(string value);
     partial void OnSurnameChanged();
-    partial void OnPhoneChanging(System.Nullable<int> value);
+    partial void OnPhoneChanging(string value);
     partial void OnPhoneChanged();
+    partial void OnAdminChanging(bool value);
+    partial void OnAdminChanged();
+    partial void OnUsernameChanging(string value);
+    partial void OnUsernameChanged();
+    partial void OnPostalAdressChanging(string value);
+    partial void OnPostalAdressChanged();
+    partial void OnSuberbChanging(string value);
+    partial void OnSuberbChanged();
+    partial void OnCityChanging(string value);
+    partial void OnCityChanged();
+    partial void OnProvinceChanging(string value);
+    partial void OnProvinceChanged();
+    partial void OnPostalCodeChanging(string value);
+    partial void OnPostalCodeChanged();
     #endregion
 		
 		public User()
@@ -165,7 +193,7 @@ namespace AlchemyGamesv2._0
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -185,7 +213,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Email
 		{
 			get
@@ -205,7 +233,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string Password
 		{
 			get
@@ -225,7 +253,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FirstName", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string FirstName
 		{
 			get
@@ -245,7 +273,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Surname", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
 		public string Surname
 		{
 			get
@@ -265,8 +293,8 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="Int")]
-		public System.Nullable<int> Phone
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="VarChar(13)")]
+		public string Phone
 		{
 			get
 			{
@@ -281,6 +309,146 @@ namespace AlchemyGamesv2._0
 					this._Phone = value;
 					this.SendPropertyChanged("Phone");
 					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin", DbType="Bit NOT NULL")]
+		public bool Admin
+		{
+			get
+			{
+				return this._Admin;
+			}
+			set
+			{
+				if ((this._Admin != value))
+				{
+					this.OnAdminChanging(value);
+					this.SendPropertyChanging();
+					this._Admin = value;
+					this.SendPropertyChanged("Admin");
+					this.OnAdminChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Username", DbType="VarChar(255) NOT NULL", CanBeNull=false)]
+		public string Username
+		{
+			get
+			{
+				return this._Username;
+			}
+			set
+			{
+				if ((this._Username != value))
+				{
+					this.OnUsernameChanging(value);
+					this.SendPropertyChanging();
+					this._Username = value;
+					this.SendPropertyChanged("Username");
+					this.OnUsernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostalAdress", DbType="VarChar(50)")]
+		public string PostalAdress
+		{
+			get
+			{
+				return this._PostalAdress;
+			}
+			set
+			{
+				if ((this._PostalAdress != value))
+				{
+					this.OnPostalAdressChanging(value);
+					this.SendPropertyChanging();
+					this._PostalAdress = value;
+					this.SendPropertyChanged("PostalAdress");
+					this.OnPostalAdressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Suberb", DbType="VarChar(255)")]
+		public string Suberb
+		{
+			get
+			{
+				return this._Suberb;
+			}
+			set
+			{
+				if ((this._Suberb != value))
+				{
+					this.OnSuberbChanging(value);
+					this.SendPropertyChanging();
+					this._Suberb = value;
+					this.SendPropertyChanged("Suberb");
+					this.OnSuberbChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(255)")]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this.OnCityChanging(value);
+					this.SendPropertyChanging();
+					this._City = value;
+					this.SendPropertyChanged("City");
+					this.OnCityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Province", DbType="VarChar(25)")]
+		public string Province
+		{
+			get
+			{
+				return this._Province;
+			}
+			set
+			{
+				if ((this._Province != value))
+				{
+					this.OnProvinceChanging(value);
+					this.SendPropertyChanging();
+					this._Province = value;
+					this.SendPropertyChanged("Province");
+					this.OnProvinceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PostalCode", DbType="VarChar(10)")]
+		public string PostalCode
+		{
+			get
+			{
+				return this._PostalCode;
+			}
+			set
+			{
+				if ((this._PostalCode != value))
+				{
+					this.OnPostalCodeChanging(value);
+					this.SendPropertyChanging();
+					this._PostalCode = value;
+					this.SendPropertyChanged("PostalCode");
+					this.OnPostalCodeChanged();
 				}
 			}
 		}
@@ -415,7 +583,7 @@ namespace AlchemyGamesv2._0
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -435,7 +603,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
 		public string Name
 		{
 			get
@@ -701,7 +869,7 @@ namespace AlchemyGamesv2._0
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -905,7 +1073,7 @@ namespace AlchemyGamesv2._0
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -985,7 +1153,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrackingNumber", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TrackingNumber", DbType="VarChar(10)")]
 		public string TrackingNumber
 		{
 			get
@@ -1148,7 +1316,7 @@ namespace AlchemyGamesv2._0
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get

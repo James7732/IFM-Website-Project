@@ -18,14 +18,14 @@
   <div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-49">
+				<form class="login100-form validate-form" runat="server">
+					<span id="userMsg" runat="server" class="login100-form-title p-b-49">
 						Login to Alchemy Games
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
-						<span class="label-input100">Username</span>
-						<input id="username" runat="server" class="input100" type="text" name="username" placeholder="Type your username"/>
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is required">
+						<span class="label-input100">Email</span>
+						<input id="email" runat="server" class="input100" type="email" name="email" placeholder="Type your email"/>
 						<span class="focus-input100" data-symbol="&#128100;"></span>
 					</div>
 
@@ -44,7 +44,9 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button id="btnLogin" runat="server" onserverclick="Login_ServerClick" class="login100-form-btn">
+                            <%--<input class="login100-form-btn" id="Signup_Button" runat="server" type="submit" onserverclick="Login_ServerClick" value="Sign Up" />--%>
+                            <%--<asp:Button runat="server" ID="register_button" Text="Sign Up"  OnClick="Login_ServerClick" class="login100-form-btn"/>--%>
+							<button id="btnLogin" runat="server" type="submit" onserverclick="Login_ServerClick" class="login100-form-btn">
 								Login
 							</button>
 						</div>
@@ -75,7 +77,7 @@
 							Or Sign Up Using
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="Register.aspx" class="txt2">
 							Sign Up
 						</a>
 					</div>

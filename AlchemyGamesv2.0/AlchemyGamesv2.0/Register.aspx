@@ -18,55 +18,62 @@
   <div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
-					<span class="login100-form-title p-b-49">
+				<form class="login100-form validate-form" runat="server">
+					<span id="Usermsg" runat="server" class="login100-form-title p-b-49">
 						Register - Alchemy Games
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is required">
 						<span class="label-input100">Email</span>
-						<input id="userEmail" runat="server" class="input100" type="text" name="email" placeholder="Type your email"/>
-						<span class="focus-input100" data-symbol="&#128100;"></span>
+						<input id="userEmail" runat="server" class="input100" type="email" name="email" placeholder="Type your email"/>
+						<span class="focus-input100"></span>
+                        <!--data-symbol="&#128100;"-->
+					</div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Username is required">
+						<span class="label-input100">Username</span>
+						<input id="username" runat="server" class="input100" type="text" name="username" placeholder="Type a username"/>
+						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Name is required">
 						<span class="label-input100">First Name</span>
 						<input id="firstname" runat="server" class="input100" type="text" name="name" placeholder="Type your first name"/>
-						<span class="focus-input100" data-symbol="&#128274;"></span>
+						<span class="focus-input100"></span>
 					</div>
 					
 					<div class="wrap-input100 validate-input" data-validate="Surname is required">
 						<span class="label-input100">Surname</span>
 						<input id="surname" runat="server" class="input100" type="text" name="surname" placeholder="Type your surname"/>
-						<span class="focus-input100" data-symbol="&#128274;"></span>
+						<span class="focus-input100"></span>
 					</div>
 
                     <div class="wrap-input100">
 						<span class="label-input100">Phone Number</span>
-						<input id="phonenumber" runat="server" class="input100" type="text" name="phone" placeholder="Type your phone number (optional)"/>
-						<span class="focus-input100" data-symbol="&#128274;"></span>
+						<input id="phonenumber" runat="server" class="input100" type="number" name="phone" placeholder="Type your phone number (optional)"/>
+						<span class="focus-input100"></span>
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
 						<span class="label-input100">Password</span>
 						<input id="password" runat="server" class="input100" type="password" name="pass" placeholder="Type your password"/>
-						<span class="focus-input100" data-symbol="&#128274;"></span>
+						<span class="focus-input100"></span>
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate="Confirmed password is required">
 						<span class="label-input100">Confirm password</span>
 						<input id="confpassword" runat="server" class="input100" type="password" name="pass" placeholder="Confirm your password"/>
-						<span class="focus-input100" data-symbol="&#f2b6;"></span>
+						<span class="focus-input100"></span>
 					</div>
 
                     <br/>
                     <br/>
-					
+
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button id="btnRegister" runat="server" onserverclick="Register_ServerClick" class="login100-form-btn">
-								Login
+							<button id="btnRegister" runat="server" type="submit" onserverclick="Register_ServerClick" class="login100-form-btn">
+								Sign Up
 							</button>
 						</div>
 					</div>

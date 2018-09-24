@@ -65,11 +65,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account.aspx" />
+    <Content Include="Admin.aspx" />
     <Content Include="App_Data\AlchemyDatabase.mdf" />
     <Content Include="App_Data\AlchemyDatabase_log.ldf">
       <DependentUpon>AlchemyDatabase.mdf</DependentUpon>
     </Content>
-    <Content Include="cart.aspx" />
+    <Content Include="Cart.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="css\Alchemy.css" />
     <Content Include="css\main.css" />
     <Content Include="css\util.css" />
     <Content Include="dummy\cart-thumb-1%402x.jpg" />
@@ -122,12 +126,7 @@
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\font-awesome.min.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\iconic\css\material-design-iconic-font.min.css" />
-    <Content Include="fonts\lineo-icon\demo-files\demo.css" />
-    <Content Include="fonts\lineo-icon\demo-files\demo.js" />
-    <Content Include="fonts\lineo-icon\demo.html" />
     <Content Include="fonts\lineo-icon\fonts\icomoon.svg" />
-    <Content Include="fonts\lineo-icon\Read Me.txt" />
     <Content Include="fonts\lineo-icon\style.css" />
     <Content Include="images\arrow%402x.png" />
     <Content Include="images\arrow.png" />
@@ -136,6 +135,7 @@
     <Content Include="images\icon-home.png" />
     <Content Include="images\icon-search%402x.png" />
     <Content Include="images\icon-search.png" />
+    <Content Include="images\Icon.png" />
     <Content Include="images\logo%402x.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\Project - Drawing 1_2.png" />
@@ -143,22 +143,28 @@
     <Content Include="images\select.png" />
     <Content Include="js\app.js" />
     <Content Include="js\bannerslider.js" />
-    <Content Include="js\ie-support\html5.js" />
-    <Content Include="js\ie-support\pie.htc" />
-    <Content Include="js\ie-support\respond.js" />
-    <Content Include="js\jquery-1.11.1.min.js" />
-    <Content Include="js\min\app-min.js" />
-    <Content Include="js\min\plugins-min.js" />
-    <Content Include="js\plugins.js" />
-    <Content Include="LandinPage.aspx" />
+    <Content Include="HomePage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Single.aspx" />
     <Content Include="Products.aspx" />
-    <Content Include="style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.aspx.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account.aspx.designer.cs">
+      <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AlchemyGames.Master.cs">
       <DependentUpon>AlchemyGames.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -171,19 +177,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AlchemyLink.dbml</DependentUpon>
     </Compile>
-    <Compile Include="cart.aspx.cs">
-      <DependentUpon>cart.aspx</DependentUpon>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="cart.aspx.designer.cs">
-      <DependentUpon>cart.aspx</DependentUpon>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
-    <Compile Include="LandinPage.aspx.cs">
-      <DependentUpon>LandinPage.aspx</DependentUpon>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LandinPage.aspx.designer.cs">
-      <DependentUpon>LandinPage.aspx</DependentUpon>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -222,24 +235,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sass\style.scss" />
-    <Content Include="sass\layout\_content.scss" />
-    <Content Include="sass\layout\_footer.scss" />
-    <Content Include="sass\layout\_header.scss" />
-    <Content Include="sass\libs\_components.scss" />
-    <Content Include="sass\libs\_global.scss" />
-    <Content Include="sass\libs\_mixins.scss" />
-    <Content Include="sass\libs\_normalize.scss" />
-    <Content Include="sass\libs\_settings.scss" />
-    <Content Include="sass\libs\bootstrap-grid\_grid.scss" />
-    <Content Include="sass\libs\bootstrap-grid\_mixins.scss" />
-    <Content Include="sass\libs\bootstrap-grid\_settings.scss" />
-    <Content Include="js\jquery-1.11.1.min.map" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\FontAwesome.otf" />
-    <Content Include="fonts\lineo-icon\selection.json" />
     <Content Include="fonts\lineo-icon\fonts\icomoon.eot" />
     <Content Include="fonts\lineo-icon\fonts\icomoon.ttf" />
     <Content Include="fonts\lineo-icon\fonts\icomoon.woff" />

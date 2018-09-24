@@ -273,6 +273,26 @@ iframe {
   padding-top: 3px;
 }
 
+/*.focus-input100 i {
+    font-family: Material-Design-Iconic-Font;
+    color: #adadad;
+    font-size: 22px;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: calc(100% - 20px);
+    bottom: 0;
+    left: 0;
+    padding-left: 13px;
+    padding-top: 3px;
+}*/
+
 .focus-input100::before {
   content: "";
   display: block;
