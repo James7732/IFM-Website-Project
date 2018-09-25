@@ -9,6 +9,9 @@ namespace AlchemyGamesv2._0
 {
     public partial class AlchemyGames : System.Web.UI.MasterPage
     {
+        public List<int> CartItems1;
+
+        internal List<int> CartItems;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Admin"] != null)

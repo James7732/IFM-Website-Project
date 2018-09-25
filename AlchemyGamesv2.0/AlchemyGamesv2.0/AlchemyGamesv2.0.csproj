@@ -218,6 +218,7 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
+    <Compile Include="ShoppingCart.cs" />
     <Compile Include="Single.aspx.cs">
       <DependentUpon>Single.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

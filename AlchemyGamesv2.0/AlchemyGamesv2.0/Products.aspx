@@ -46,7 +46,7 @@
 							</div> <!-- .pagination -->
 						</div> <!-- .filter-bar -->
 
-                <div class="product-list">
+                <div id="prodList" runat="server" class="product-list">
                     <div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
@@ -56,7 +56,8 @@
                             <h3 class="product-title"><a href="#">Alpha Protocol</a></h3>
                             <small class="price">$19.00</small>
                             <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
-                            <a href="#" class="button">Add to cart</a>
+                            <%--<a href="#" class="button">Add to cart</a>--%>
+                            <button class="button" runat="server" type="button" onserverclick="AddToCart_ServerClick">Add to cart</button>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
                     </div>
