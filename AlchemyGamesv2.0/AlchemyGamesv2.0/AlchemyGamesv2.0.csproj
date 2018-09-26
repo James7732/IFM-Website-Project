@@ -67,6 +67,7 @@
   <ItemGroup>
     <Content Include="Account.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="App_Data\AlchemyDatabase.mdf" />
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\Alchemy.css" />
@@ -140,6 +141,7 @@
     <Content Include="js\app.js" />
     <Content Include="js\bannerslider.js" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Create Database.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Single.aspx" />
@@ -193,6 +195,13 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Create Database.aspx.cs">
+      <DependentUpon>Create Database.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Create Database.aspx.designer.cs">
+      <DependentUpon>Create Database.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -268,9 +277,7 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

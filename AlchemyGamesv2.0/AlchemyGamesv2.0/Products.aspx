@@ -7,6 +7,7 @@
         <div class="container">
             <div class="page">
                 <div class="filter-bar">
+                    <h1 id="errmsg" runat="server"></h1>
 							<div class="filter">
 								<span>
 									<label>Sort by:</label>
