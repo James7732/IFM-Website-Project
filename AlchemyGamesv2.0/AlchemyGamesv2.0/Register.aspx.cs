@@ -37,7 +37,7 @@ namespace AlchemyGamesv2._0
 
                 foreach (User u in users)
                 {
-                    if (u.Username.Equals(username))
+                    if (u.Username.Equals(username) || u.Email.Equals(email))
                     {
                         exists = true;
                     }
