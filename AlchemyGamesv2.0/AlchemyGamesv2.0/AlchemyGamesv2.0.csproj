@@ -67,10 +67,6 @@
   <ItemGroup>
     <Content Include="Account.aspx" />
     <Content Include="Admin.aspx" />
-    <Content Include="App_Data\AlchemyDatabase.mdf" />
-    <Content Include="App_Data\AlchemyDatabase_log.ldf">
-      <DependentUpon>AlchemyDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\Alchemy.css" />
@@ -271,6 +267,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
