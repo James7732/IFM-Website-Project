@@ -7,7 +7,7 @@ namespace AlchemyGamesv2._0
 {
     public static class ShoppingCart
     {
-        private static List<int> CartItems;
+        private static List<int> CartItems = new List<int>();
 
         public static void addItem(int itemToAdd)
         {
@@ -22,6 +22,16 @@ namespace AlchemyGamesv2._0
         public static List<int> getCartItems()
         {
             return CartItems;
+        }
+
+        public static int getItem(int index)
+        {
+            return CartItems.ElementAt(index);
+        }
+
+        public static int getNumItems()
+        {
+            return CartItems.Count;
         }
     }
 }

@@ -68,6 +68,9 @@
     <Content Include="Account.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="App_Data\AlchemyDatabase.mdf" />
+    <Content Include="App_Data\AlchemyDatabase_log.ldf">
+      <DependentUpon>AlchemyDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Cart.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\Alchemy.css" />
