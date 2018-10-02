@@ -48,7 +48,7 @@
 						</div> <!-- .filter-bar -->
 
                 <div id="prodList" runat="server" class="product-list">
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -58,13 +58,13 @@
                             <small class="price">$19.00</small>
                             <p>Lorem ipsum dolor sit consectetur adipiscing elit do eiusmod tempor...</p>
                             <%--<a href="#" class="button">Add to cart</a>--%>
-                            <button class="button" runat="server" type="button" onserverclick="AddToCart_ServerClick">Add to cart</button>
+                            <%--<button class="button" runat="server" type="button" onserverclick="AddToCart_ServerClick">Add to cart</button>
                             <a href="#" class="button muted">Read Details</a>
-                        </div>
-                    </div>
+                        </div>--%>
+                    <%--</div>--%>
                     <!-- .product -->
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -76,10 +76,10 @@
                             <a href="cart.aspx" class="button">Add to cart</a>
                             <a href="Single.aspx" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -91,10 +91,10 @@
                             <a href="cart.aspx" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -106,10 +106,10 @@
                             <a href="#" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -121,11 +121,11 @@
                             <a href="#" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -137,11 +137,11 @@
                             <a href="#" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -153,11 +153,11 @@
                             <a href="#" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
 
-                    <div class="product">
+                    <%--<div class="product">
                         <div class="inner-product">
                             <div class="figure-image">
                                 <a href="single.html">
@@ -169,7 +169,7 @@
                             <a href="#" class="button">Add to cart</a>
                             <a href="#" class="button muted">Read Details</a>
                         </div>
-                    </div>
+                    </div>--%>
                     <!-- .product -->
 
                 </div>
