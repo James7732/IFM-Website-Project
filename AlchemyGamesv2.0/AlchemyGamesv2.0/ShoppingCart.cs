@@ -9,9 +9,12 @@ namespace AlchemyGamesv2._0
     {
         private static List<int> CartItems = new List<int>();
 
-        public static void addItem(int itemToAdd)
+        public static void addItem(int itemToAdd, int numItems)
         {
-            CartItems.Add(itemToAdd);
+            for(int i = 0; i < numItems; i++)
+            {
+                CartItems.Add(itemToAdd);
+            }
         }
 
         public static void removeItem(int itemToRemove)

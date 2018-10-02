@@ -28,7 +28,6 @@
                     </header>
 
                     <div class="product-list">
-
                         <div class="product">
                             <div class="inner-product">
                                 <div class="figure-image">

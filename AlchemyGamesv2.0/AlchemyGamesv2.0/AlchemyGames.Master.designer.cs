@@ -85,49 +85,13 @@ namespace AlchemyGamesv2._0 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor adminPage;
         
         /// <summary>
-        /// HomeNavBtn control.
+        /// navMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HomeNavBtn;
-        
-        /// <summary>
-        /// PCNavBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PCNavBtn;
-        
-        /// <summary>
-        /// PSNavBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl PSNavBtn;
-        
-        /// <summary>
-        /// xboxNavBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl xboxNavBtn;
-        
-        /// <summary>
-        /// nintendoNavBtn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl nintendoNavBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navMenu;
         
         /// <summary>
         /// ContentPlaceHolder1 control.

@@ -60,12 +60,8 @@
 
 					<div class="main-navigation">
 						<button class="toggle-menu"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li runat="server" id="HomeNavBtn" class="menu-item home current-menu-item"><a href="HomePage.aspx"><i class="icon-home"></i></a></li>
-							<li runat="server" id="PCNavBtn" class="menu-item"><a href="Products.aspx?ID=PC">PC</a></li>
-							<li runat="server" id="PSNavBtn" class="menu-item"><a href="Products.aspx?ID=PlayStation">PlayStation</a></li>
-							<li runat="server" id="xboxNavBtn" class="menu-item"><a href="Products.aspx?ID=Xbox">Xbox</a></li>
-							<li runat="server" id="nintendoNavBtn" class="menu-item"><a href="Products.aspx?ID=Nintendo">Nintendo</a></li>
+						<ul class="menu" id="navMenu" runat="server">
+							<%--Menu dynamically created--%>
 
 						</ul>
 

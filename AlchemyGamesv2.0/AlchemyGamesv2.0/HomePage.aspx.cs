@@ -11,7 +11,7 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Session["currentPage"] = "home";
         }
     }
 }

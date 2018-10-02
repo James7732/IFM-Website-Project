@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,7 +13,24 @@ namespace AlchemyGamesv2._0
         protected void Page_Load(object sender, EventArgs e)
         {
             var pageType = Request.QueryString["ID"];
-            String display = "";
+
+            switch (pageType)
+            {
+                case "PC":
+                    Session["currentPage"] = "PC";
+                    break;
+                case "PlayStation":
+                    Session["currentPage"] = "PS";
+                    break;
+                case "Xbox":
+                    Session["currentPage"] = "xbox";
+                    break;
+                case "Nintendo":
+                    Session["currentPage"] = "nintendo";
+                    break;
+            }
+
+            StringBuilder display = new StringBuilder();
 
             var db = new AlchemyLinkDataContext();
 
@@ -20,36 +38,42 @@ namespace AlchemyGamesv2._0
                             where g.Platfrom.Equals(pageType)
                             select g;
 
-            foreach(Product prod in games)
+            System.Web.UI.HtmlControls.HtmlButton btn = new System.Web.UI.HtmlControls.HtmlButton();
+            btn.ID = "btnCart";
+            btn.Attributes["class"] = "button";
+            btn.ServerClick += new EventHandler(AddToCart_ServerClick);
+            btn.InnerHtml = "add to cart";
+            foreach (Product prod in games)
             {
-                display = "<div class=\"product\">" + Environment.NewLine;
-                display += "<div class=\"inner-product\">" + Environment.NewLine;
-                display += "<div class=\"figure-image\">" + Environment.NewLine;
-                display += "<a href =\"single.html?ID="+ prod.Id +"\">" + Environment.NewLine;
-                display += "<img src=\""+ prod.ImageLink +"\" alt=\"Game 1\"></a>" + Environment.NewLine;
-                display += "</div>" + Environment.NewLine;
-                display += "<h3 class=\"product-title\"><a href=\"single.html?ID=" + prod.Id + "\">"+ prod.Name +"</a></h3>" + Environment.NewLine;
-                display += "<small class=\"price\">R"+ prod.Price +"</small>" + Environment.NewLine;
-                display += "<p>"+ prod.Description +"</p>" + Environment.NewLine;
-                display += "<button class=\"button\" runat=\"server\" type=\"button\" onserverclick=\"AddToCart_ServerClick?ID="+ prod.Id +"\">Add to cart</button>" + Environment.NewLine;
-                display += "<a href=\"Single.aspx?ID="+ prod.Id +"\" class=\"button muted\">Read Details</a>" + Environment.NewLine;
-                display += "</div>" + Environment.NewLine;
-                display += "</div>" + Environment.NewLine;
+                display.Append("<div class=\"product\">" + Environment.NewLine);
+                display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                display.Append("<a href =\"single.html?ID=" + prod.Id +"\">" + Environment.NewLine);
+                display.Append("<img src=\"" + prod.ImageLink +"\" alt=\"Game 1\"></a>" + Environment.NewLine);
+                display.Append("</div>" + Environment.NewLine);
+                display.Append("<h3 class=\"product-title\"><a href=\"single.aspx?ID=" + prod.Id + "\">"+ prod.Name +"</a></h3>" + Environment.NewLine);
+                display.Append("<small class=\"price\">R" + prod.Price +"</small>" + Environment.NewLine);
+                display.Append("<p>" + prod.Description +"</p>" + Environment.NewLine);
+                display.Append("<button class=\"button\" runat=\"server\" type=\"button\" onserverclick=\"AddToCart_ServerClick?ID=" + prod.Id + "\">Add to cart</button>" + Environment.NewLine);
+                display.Append("<a href=\"Single.aspx?ID=" + prod.Id +"\" class=\"button muted\">Read Details</a>" + Environment.NewLine);
+                display.Append("</div>" + Environment.NewLine);
+                display.Append("</div>" + Environment.NewLine);
 
-                prodList.InnerHtml = display;
-                display = "";
+                prodList.InnerHtml = display.ToString();
             }
+            display.Clear();
         }
 
         protected void AddToCart_ServerClick(object sender, EventArgs e)
         {
+            testMsg.InnerHtml = "WORKS!";
             var db = new AlchemyLinkDataContext();
 
             var item = (from Product prod in db.Products
                        where prod.Id.Equals(Request.QueryString["ID"])
                        select prod).FirstOrDefault();
 
-            ShoppingCart.addItem(item.Id);
+            ShoppingCart.addItem(item.Id, 1);
         }
     }
 }

@@ -18,7 +18,7 @@
                         </tr>
                     </thead>
                     <tbody id="cartDisplay" runat="server">
-                        <tr>
+                        <%--<tr>
                             <td class="product-name">
                                 <div class="product-thumbnail">
                                     <img src="dummy/cart-thumb-1.jpg" alt="">
@@ -80,7 +80,7 @@
                             </td>
                             <td class="product-total">$150.00</td>
                             <td class="action"><a href="#"><i class="fa fa-times"></i></a></td>
-                        </tr>
+                        </tr>--%>
                     </tbody>
                 </table>
                 <!-- .cart -->

@@ -10,44 +10,8 @@
       <Column Name="Phone" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
       <Column Name="Admin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="Username" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="PostalAdress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Suberb" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="City" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
-      <Column Name="Province" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="PostalCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="User_Order" Member="Orders" ThisKey="Id" OtherKey="UserID" Type="Order" />
       <Association Name="User_Comment" Member="Comments" ThisKey="Id" OtherKey="UserID" Type="Comment" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[Order/Product]" Member="Order_Products">
-    <Type Name="Order_Product">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Order_Order_Product" Member="Order" ThisKey="OrderID" OtherKey="Id" Type="Order" IsForeignKey="true" />
-      <Association Name="Product_Order_Product" Member="Product" ThisKey="ProductID" OtherKey="Id" Type="Product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.[Order]" Member="Orders">
-    <Type Name="Order">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Amount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="TrackingNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Order_Order_Product" Member="Order_Products" ThisKey="Id" OtherKey="OrderID" Type="Order_Product" />
-      <Association Name="User_Order" Member="User" ThisKey="UserID" OtherKey="Id" Type="User" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Comments" Member="Comments">
-    <Type Name="Comment">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Comment" Member="Comment1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="User_Comment" Member="User" ThisKey="UserID" OtherKey="Id" Type="User" IsForeignKey="true" />
-      <Association Name="Product_Comment" Member="Product" ThisKey="ProductID" OtherKey="Id" Type="Product" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Product" Member="Products">
@@ -63,6 +27,42 @@
       <Column Name="Tax" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="Product_Order_Product" Member="Order_Products" ThisKey="Id" OtherKey="ProductID" Type="Order_Product" />
       <Association Name="Product_Comment" Member="Comments" ThisKey="Id" OtherKey="ProductID" Type="Comment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order/Product]" Member="Order_Products">
+    <Type Name="Order_Product">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_Order_Product" Member="Product" ThisKey="ProductID" OtherKey="Id" Type="Product" IsForeignKey="true" />
+      <Association Name="Order_Order_Product" Member="Order" ThisKey="OrderID" OtherKey="Id" Type="Order" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Orders">
+    <Type Name="Order">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Time" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="TrackingNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostalAdress" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suberb" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="Order_Order_Product" Member="Order_Products" ThisKey="Id" OtherKey="OrderID" Type="Order_Product" />
+      <Association Name="User_Order" Member="User" ThisKey="UserID" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comments" Member="Comments">
+    <Type Name="Comment">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Comment" Member="Comment1" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Product_Comment" Member="Product" ThisKey="ProductID" OtherKey="Id" Type="Product" IsForeignKey="true" />
+      <Association Name="User_Comment" Member="User" ThisKey="UserID" OtherKey="Id" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

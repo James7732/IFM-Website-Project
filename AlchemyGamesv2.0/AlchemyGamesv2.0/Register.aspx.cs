@@ -35,7 +35,7 @@ namespace AlchemyGamesv2._0
             if (PassWord.Equals(ConfPass))
             {
 
-                foreach (User u in users)
+                foreach (User u in database.Users)
                 {
                     if (u.Username.Equals(username) || u.Email.Equals(email))
                     {
@@ -53,12 +53,7 @@ namespace AlchemyGamesv2._0
                         Surname = SurName,
                         Phone = Cell,
                         Password = PassWord,
-                        Admin = false,
-                        PostalAdress = null,
-                        Suberb = null,
-                        City = null,
-                        Province = null,
-                        PostalCode = null
+                        Admin = false
                     };
 
                     try

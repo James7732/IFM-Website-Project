@@ -41,7 +41,7 @@ namespace AlchemyGamesv2._0
                 display = "<td class=\"action\"><a href=\"#\"><i class=\"fa fa-times\"></i></a></td>" + Environment.NewLine;
                 display = "</tr>" + Environment.NewLine;
 
-                cartDisplay.InnerHtml = display;
+                cartDisplay.InnerHtml += display;
 
                 display = "";
             }
