@@ -48,7 +48,7 @@ namespace AlchemyGamesv2._0
                 display.Append("<div class=\"product\">" + Environment.NewLine);
                 display.Append("<div class=\"inner-product\">" + Environment.NewLine);
                 display.Append("<div class=\"figure-image\">" + Environment.NewLine);
-                display.Append("<a href =\"single.html?ID=" + prod.Id +"\">" + Environment.NewLine);
+                display.Append("<a href =\"single.aspx?ID=" + prod.Id +"\">" + Environment.NewLine);
                 display.Append("<img src=\"" + prod.ImageLink +"\" alt=\"Game 1\"></a>" + Environment.NewLine);
                 display.Append("</div>" + Environment.NewLine);
                 display.Append("<h3 class=\"product-title\"><a href=\"single.aspx?ID=" + prod.Id + "\">"+ prod.Name +"</a></h3>" + Environment.NewLine);
