@@ -1,23 +1,18 @@
 ﻿let slide_data = [
     {
-        'src': 'https://image.ibb.co/no3Vpe/banner1.jpg',
+        'src': 'images/assassinsbanner.jpg',
         'title': '',
-        'copy': 'Welcome to a new gaming experience.'
+        'copy': ''
     },
     {
-        'src': 'https://image.ibb.co/hdWETK/action_games_wallpapers_set_1.jpg',
-        'title': 'Slide 2',
-        'copy': 'DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT.'
+        'src': 'images/dragonbanner.jpg',
+        'title': '',
+        'copy': ''
     },
     {
-        'src': 'https://venturebeat.com/wp-content/uploads/2017/11/world_of_warcraft_battle_for_azeroth_anduin_vs_sylvanas_key_art_logo.jpg?fit=2560%2C1080&strip=all',
-        'title': 'World of Warcraft',
-        'copy': 'Are you ready to defend your stronghold in the new Battle of Azeroth?'
-    },
-    {
-        'src': 'https://i.ytimg.com/vi/520I3v7wofg/maxresdefault.jpg',
-        'title': 'Dishonored 2',
-        'copy': 'Corvo, old friend. Do I even need to say it? You\'ve lost another Empress.'
+        'src': 'images/halobanner.jpg',
+        'title': '',
+        'copy': ''
     },
 
 ];

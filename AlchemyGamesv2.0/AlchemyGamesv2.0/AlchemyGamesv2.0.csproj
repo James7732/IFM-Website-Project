@@ -130,7 +130,10 @@
     <Content Include="fonts\lineo-icon\style.css" />
     <Content Include="images\arrow%402x.png" />
     <Content Include="images\arrow.png" />
+    <Content Include="images\assassinsbanner.jpg" />
     <Content Include="images\bg-01.jpg" />
+    <Content Include="images\dragonbanner.jpg" />
+    <Content Include="images\halobanner.jpg" />
     <Content Include="images\icon-home%402x.png" />
     <Content Include="images\icon-home.png" />
     <Content Include="images\icon-search%402x.png" />
