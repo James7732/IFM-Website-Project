@@ -34,7 +34,7 @@ namespace AlchemyGamesv2._0
             {
                 String nav = "<li runat =\"server\" id=\"HomeNavBtn\" class=\"menu-item home current-menu-item\"><a href =\"HomePage.aspx\" ><i class=\"icon-home\"></i></a></li>";
                 nav += "<li runat=\"server\" id=\"PCNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PC\">PC</a></li>";
-                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PlayStation\">PlayStation</a></li>";
+                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PS\">PlayStation</a></li>";
                 nav += "<li runat=\"server\" id=\"xboxNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Xbox\">Xbox</a></li>";
                 nav += "<li runat=\"server\" id=\"nintendoNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Nintendo\">Nintendo</a></li>";
 
@@ -43,7 +43,7 @@ namespace AlchemyGamesv2._0
             {
                 String nav = "<li runat =\"server\" id=\"HomeNavBtn\" class=\"menu-item home\"><a href =\"HomePage.aspx\" ><i class=\"icon-home\"></i></a></li>";
                 nav += "<li runat=\"server\" id=\"PCNavBtn\" class=\"menu-item current-menu-item\"><a href=\"Products.aspx?ID=PC\">PC</a></li>";
-                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PlayStation\">PlayStation</a></li>";
+                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PS\">PlayStation</a></li>";
                 nav += "<li runat=\"server\" id=\"xboxNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Xbox\">Xbox</a></li>";
                 nav += "<li runat=\"server\" id=\"nintendoNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Nintendo\">Nintendo</a></li>";
 
@@ -52,7 +52,7 @@ namespace AlchemyGamesv2._0
             {
                 String nav = "<li runat =\"server\" id=\"HomeNavBtn\" class=\"menu-item home\"><a href =\"HomePage.aspx\" ><i class=\"icon-home\"></i></a></li>";
                 nav += "<li runat=\"server\" id=\"PCNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PC\">PC</a></li>";
-                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item current-menu-item\"><a href=\"Products.aspx?ID=PlayStation\">PlayStation</a></li>";
+                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item current-menu-item\"><a href=\"Products.aspx?ID=PS\">PlayStation</a></li>";
                 nav += "<li runat=\"server\" id=\"xboxNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Xbox\">Xbox</a></li>";
                 nav += "<li runat=\"server\" id=\"nintendoNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Nintendo\">Nintendo</a></li>";
 
@@ -61,7 +61,7 @@ namespace AlchemyGamesv2._0
             {
                 String nav = "<li runat =\"server\" id=\"HomeNavBtn\" class=\"menu-item home\"><a href =\"HomePage.aspx\" ><i class=\"icon-home\"></i></a></li>";
                 nav += "<li runat=\"server\" id=\"PCNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PC\">PC</a></li>";
-                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PlayStation\">PlayStation</a></li>";
+                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PS\">PlayStation</a></li>";
                 nav += "<li runat=\"server\" id=\"xboxNavBtn\" class=\"menu-item current-menu-item\"><a href=\"Products.aspx?ID=Xbox\">Xbox</a></li>";
                 nav += "<li runat=\"server\" id=\"nintendoNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Nintendo\">Nintendo</a></li>";
 
@@ -70,7 +70,7 @@ namespace AlchemyGamesv2._0
             {
                 String nav = "<li runat =\"server\" id=\"HomeNavBtn\" class=\"menu-item home\"><a href =\"HomePage.aspx\" ><i class=\"icon-home\"></i></a></li>";
                 nav += "<li runat=\"server\" id=\"PCNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PC\">PC</a></li>";
-                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PlayStation\">PlayStation</a></li>";
+                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PS\">PlayStation</a></li>";
                 nav += "<li runat=\"server\" id=\"xboxNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Xbox\">Xbox</a></li>";
                 nav += "<li runat=\"server\" id=\"nintendoNavBtn\" class=\"menu-item current-menu-item\"><a href=\"Products.aspx?ID=Nintendo\">Nintendo</a></li>";
 
@@ -79,7 +79,7 @@ namespace AlchemyGamesv2._0
             {
                 String nav = "<li runat =\"server\" id=\"HomeNavBtn\" class=\"menu-item home current-menu-item\"><a href =\"HomePage.aspx\" ><i class=\"icon-home\"></i></a></li>";
                 nav += "<li runat=\"server\" id=\"PCNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PC\">PC</a></li>";
-                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PlayStation\">PlayStation</a></li>";
+                nav += "<li runat=\"server\" id=\"PSNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=PS\">PlayStation</a></li>";
                 nav += "<li runat=\"server\" id=\"xboxNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Xbox\">Xbox</a></li>";
                 nav += "<li runat=\"server\" id=\"nintendoNavBtn\" class=\"menu-item\"><a href=\"Products.aspx?ID=Nintendo\">Nintendo</a></li>";
 

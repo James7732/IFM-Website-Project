@@ -2,69 +2,69 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="AlchemyLink">
   <DataContextMoniker Name="/AlchemyLinkDataContext" />
   <nestedChildShapes>
-    <classShape Id="f015bb3c-ece2-4137-8133-421d38c7ae50" absoluteBounds="0.75, 3.25, 2, 2.3478011067708335">
+    <classShape Id="d18a46de-ad97-4bcf-844f-4630b586c444" absoluteBounds="0.5, 2.875, 2, 2.3478011067708335">
       <DataClassMoniker Name="/AlchemyLinkDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="c6597ec3-879c-46a0-a15f-90bf42ae0ea5" absoluteBounds="0.765, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="00e82057-0f36-4c77-bb11-1d73dbbc5527" absoluteBounds="0.515, 3.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="47c2e055-d308-406c-b00b-3d2bba746f0c" absoluteBounds="1.5, 5.875, 2, 2.5401025390625">
-      <DataClassMoniker Name="/AlchemyLinkDataContext/Product" />
-      <nestedChildShapes>
-        <elementListCompartment Id="eb548417-6fba-4fe2-bb60-10afd448447c" absoluteBounds="1.5150000000000001, 6.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a19ff0e8-8608-4e99-a91f-df8de447a387" absoluteBounds="3.75, 4.375, 2, 1.3862939453125">
-      <DataClassMoniker Name="/AlchemyLinkDataContext/Order_Product" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9de4c467-4ac6-4890-b056-99c46b707630" absoluteBounds="3.7649999999999997, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(3.5 : 5.875); (3.75 : 5.7612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/AlchemyLinkDataContext/Product/Product_Order_Product" />
-      <nodes>
-        <classShapeMoniker Id="47c2e055-d308-406c-b00b-3d2bba746f0c" />
-        <classShapeMoniker Id="a19ff0e8-8608-4e99-a91f-df8de447a387" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="ac298781-2929-4fb0-94c4-5481aa5e2767" absoluteBounds="6.125, 3.75, 2, 2.9247054036458331">
-      <DataClassMoniker Name="/AlchemyLinkDataContext/Order" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c07e11b0-5c88-471a-acf3-257778d2ff09" absoluteBounds="6.14, 4.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(6.125 : 5.06814697265625); (6.02083333333333 : 5.06814697265625 : JumpStart); (5.85416666666667 : 5.06814697265625 : JumpEnd); (5.75 : 5.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/AlchemyLinkDataContext/Order/Order_Order_Product" />
-      <nodes>
-        <classShapeMoniker Id="ac298781-2929-4fb0-94c4-5481aa5e2767" />
-        <classShapeMoniker Id="a19ff0e8-8608-4e99-a91f-df8de447a387" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.03125); (5.85416666666667 : 4.03125 : JumpStart); (6.02083333333333 : 4.03125 : JumpEnd); (6.125 : 4.03125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/AlchemyLinkDataContext/User/User_Order" />
-      <nodes>
-        <classShapeMoniker Id="f015bb3c-ece2-4137-8133-421d38c7ae50" />
-        <classShapeMoniker Id="ac298781-2929-4fb0-94c4-5481aa5e2767" />
-      </nodes>
-    </associationConnector>
-    <classShape Id="ec953856-41e6-4c3a-bf3b-031a45b8bf05" absoluteBounds="4.375, 6.5, 2, 1.5785953776041666">
+    <classShape Id="c20e709c-1c98-49a5-80f1-9e7162131464" absoluteBounds="6.125, 4.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/AlchemyLinkDataContext/Comment" />
       <nestedChildShapes>
-        <elementListCompartment Id="76f39ced-7d66-4d07-9217-850fc0c00cd7" absoluteBounds="4.39, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="84c35390-f416-4378-8eb2-5e4900cce71d" absoluteBounds="6.14, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(3.5 : 7.28929768880208); (4.375 : 7.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/AlchemyLinkDataContext/Product/Product_Comment" />
-      <nodes>
-        <classShapeMoniker Id="47c2e055-d308-406c-b00b-3d2bba746f0c" />
-        <classShapeMoniker Id="ec953856-41e6-4c3a-bf3b-031a45b8bf05" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 3.46875); (5.9375 : 3.46875); (5.9375 : 6.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="63f090ca-b55d-4480-8cb3-ee8c6b347af8" absoluteBounds="3.375, 5.25, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/AlchemyLinkDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="256bee5b-b3fe-458a-9692-c40d11ce6054" absoluteBounds="3.39, 5.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1fe44045-4ef8-418d-8c1c-e095432dcf2d" absoluteBounds="6.125, 2.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AlchemyLinkDataContext/Order_Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="75ce53e0-5819-4627-89cd-43e661be31d8" absoluteBounds="6.14, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1472d50-1bc4-4eec-9b01-bf14d62de839" absoluteBounds="3.375, 1.625, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AlchemyLinkDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02c11e10-3b72-4337-aa4d-9d3f238356ac" absoluteBounds="3.39, 2.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 4.92390055338542); (6.125 : 4.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/AlchemyLinkDataContext/User/User_Comment" />
       <nodes>
-        <classShapeMoniker Id="f015bb3c-ece2-4137-8133-421d38c7ae50" />
-        <classShapeMoniker Id="ec953856-41e6-4c3a-bf3b-031a45b8bf05" />
+        <classShapeMoniker Id="d18a46de-ad97-4bcf-844f-4630b586c444" />
+        <classShapeMoniker Id="c20e709c-1c98-49a5-80f1-9e7162131464" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 5.22280110677083); (1.5 : 6.80850341796875); (3.375 : 6.80850341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AlchemyLinkDataContext/User/User_Order" />
+      <nodes>
+        <classShapeMoniker Id="d18a46de-ad97-4bcf-844f-4630b586c444" />
+        <classShapeMoniker Id="63f090ca-b55d-4480-8cb3-ee8c6b347af8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 5.25); (5.75 : 4.875); (5.75 : 2.81814697265625); (6.125 : 2.81814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AlchemyLinkDataContext/Order/Order_Order_Product" />
+      <nodes>
+        <classShapeMoniker Id="63f090ca-b55d-4480-8cb3-ee8c6b347af8" />
+        <classShapeMoniker Id="1fe44045-4ef8-418d-8c1c-e095432dcf2d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 4.10356307752404); (5.69107443490112 : 4.41963751242516 : JumpStart); (5.80892556509888 : 4.53748864262292 : JumpEnd); (5.9375 : 4.66606307752404); (5.9375 : 4.4375); (6.125 : 4.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AlchemyLinkDataContext/Product/Product_Comment" />
+      <nodes>
+        <classShapeMoniker Id="e1472d50-1bc4-4eec-9b01-bf14d62de839" />
+        <classShapeMoniker Id="c20e709c-1c98-49a5-80f1-9e7162131464" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.375 : 2.40907348632813); (6.125 : 2.40907348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AlchemyLinkDataContext/Product/Product_Order_Product" />
+      <nodes>
+        <classShapeMoniker Id="e1472d50-1bc4-4eec-9b01-bf14d62de839" />
+        <classShapeMoniker Id="1fe44045-4ef8-418d-8c1c-e095432dcf2d" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
