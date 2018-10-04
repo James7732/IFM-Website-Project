@@ -15,6 +15,11 @@ namespace AlchemyGamesv2._0
             Session["Admin"] = null;
         }
 
+        protected void Register_ServerClick(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
+        }
+
         protected void Login_ServerClick(object sender, EventArgs e)
         {
             var Email = email.Value;

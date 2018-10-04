@@ -35,9 +35,10 @@
 						<span class="focus-input100" data-symbol="&#128274;"></span>
 					</div>
 					
+                    
 					<div class="text-right p-t-8 p-b-31">
 						<a href="#">
-							Forgot password?
+							<!-- Forgot password? -->
 						</a>
 					</div>
 					
@@ -52,6 +53,20 @@
 						</div>
 					</div>
 
+                    <br />
+                    <br />
+
+                    
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+                            <button id="Button1" runat="server" type="submit" onserverclick="Register_ServerClick" class="login100-form-btn">
+								Register
+							</button>
+						</div>
+					</div>
+
+                    <!--
 					<div class="txt1 text-center p-t-54 p-b-20">
 						<span>
 							Or Sign Up Using
@@ -81,6 +96,8 @@
 							Sign Up
 						</a>
 					</div>
+                    -->
+
 				</form>
 			</div>
 		</div>
