@@ -20,7 +20,7 @@
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 				<form class="login100-form validate-form" runat="server">
 					<span id="Usermsg" runat="server" class="login100-form-title p-b-49">
-						Register to Alchemy Games
+						Register - Alchemy Games
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Email is required">
@@ -73,10 +73,11 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button id="btnRegister" runat="server" type="submit" onserverclick="Register_ServerClick" class="login100-form-btn">
-								Register
+								Sign Up
 							</button>
 						</div>
 					</div>
+
                     <!--
 					<div class="txt1 text-center p-t-54 p-b-20">
 						<span>
