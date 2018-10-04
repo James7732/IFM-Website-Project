@@ -85,13 +85,11 @@
 					<div class="row">
 						<div class="col-md-2">
 							<div class="widget">
-								<h3 class="widget-title">Navigation</h3>
+								<h3 class="widget-title"> <font color="#4990E2"> Navigation </font> </h3>
 								<ul class="no-bullet">
-									<li><a href="HomePage.aspx"> <font color="#e73515"> Home </font> </a></li>
-									<li><a href="Login.aspx"> <font color="#e73515"> Login </font> </a></li>
-									<li><a href="Register.aspx"> <font color="#e73515"> Register </font> </a></li>
-									<li><a href="Account.aspx"> <font color="#e73515"> My Account </font> </a></li>
-									<li><a href="AddAGame.aspx"> <font color="#e73515"> Add A Game </font> </a></li>
+									<li><a href="HomePage.aspx"> <font color="#45b77d"> Home </font> </a></li>
+									<li><a href="Login.aspx"> <font color="#45b77d"> Login </font> </a></li>
+									<li><a href="Register.aspx"> <font color="#45b77d"> Register </font> </a></li>
 								</ul>
 							</div>
 						</div>
@@ -99,7 +97,7 @@
 					</div>
 
 					<div class="colophon">
-						<div class="copy"> <font color="F0F00F"> Alchemy Games By The StormTroopers </font> </div>
+						<div class="copy"> <font color="#4990E2"> Alchemy Games By The StormTroopers </font> </div>
 						<!-- Template designed by Themezy -->
 					</div>
 				</div>
