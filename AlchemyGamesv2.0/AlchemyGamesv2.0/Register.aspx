@@ -23,7 +23,7 @@
 						Register - Alchemy Games
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is required">
+					<div class="wrap-input100 validate-input" data-validate = "Email is required">
 						<span class="label-input100">Email</span>
 						<input id="userEmail" runat="server" class="input100" type="email" name="email" placeholder="Type your email"/>
 						<span class="focus-input100"></span>
@@ -78,6 +78,7 @@
 						</div>
 					</div>
 
+                    <!--
 					<div class="txt1 text-center p-t-54 p-b-20">
 						<span>
 							Or Sign Up Using
@@ -97,6 +98,7 @@
 							<i class="fa fa-google"></i>
 						</a>
 					</div>
+                    -->
 				</form>
 			</div>
 		</div>
