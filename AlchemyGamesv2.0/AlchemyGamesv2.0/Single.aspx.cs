@@ -11,7 +11,20 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var database = new AlchemyLinkDataContext();
 
+            string display = "";
+
+            dynamic games = from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g;
+
+            foreach(Product p in games)
+            {
+                display += "<h1>" + p.Name + "</h1>";
+                display += "<img src=" + p.ImageLink +">";
+                display += "<p1>" + p.Description + "</p1>";
+            }
+
+            iheader.InnerHtml = display;
         }
     }
 }

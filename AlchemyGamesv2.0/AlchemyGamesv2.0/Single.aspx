@@ -7,6 +7,14 @@
         <div class="container" style="margin-top: 10%;">
             <div class="page">
 
+
+                <div runat="server" class="cheader" id="iheader">
+
+                </div>
+
+               
+
+                <!--
                 <div class="entry-content">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
@@ -15,6 +23,7 @@
                                     <a href="dummy/image-1.jpg">
                                         <img src="dummy/single-game-cover.jpg" alt=""></a>
                                 </figure>
+
                                 <div class="thumbnails">
                                     <a href="dummy/image-2.jpg">
                                         <img src="dummy/small-thumb-1.jpg" alt=""></a>
@@ -23,6 +32,7 @@
                                     <a href="dummy/image-4.jpg">
                                         <img src="dummy/small-thumb-3.jpg" alt=""></a>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-8">
@@ -44,6 +54,7 @@
                                     <input type="submit" value="Add to cart">
                                 </form>
 
+                                
                                 <div class="social-links square">
                                     <strong>Share</strong>
                                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
@@ -51,11 +62,13 @@
                                     <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
                                     <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
                                 </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
 
+                
                 <section>
                     <header>
                         <h2 class="section-title">Similiar Product</h2>
@@ -73,7 +86,6 @@
                                 <a href="#" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                         <div class="product">
                             <div class="inner-product">
@@ -87,7 +99,6 @@
                                 <a href="#" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                         <div class="product">
                             <div class="inner-product">
@@ -101,7 +112,6 @@
                                 <a href="#" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                         <div class="product">
                             <div class="inner-product">
@@ -115,16 +125,12 @@
                                 <a href="#" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                     </div>
-                    <!-- .product-list -->
                 </section>
-
+                -->
 
             </div>
         </div>
-        <!-- .container -->
     </main>
-    <!-- .main-content -->
 </asp:Content>

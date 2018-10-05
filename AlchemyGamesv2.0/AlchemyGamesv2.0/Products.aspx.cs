@@ -51,9 +51,9 @@ namespace AlchemyGamesv2._0
                 display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
                 display.Append("<img src=\"" + prod.ImageLink + "\" alt=\"Game 1\"></a>" + Environment.NewLine);
                 display.Append("</div>" + Environment.NewLine);
-                display.Append("<h3 class=\"product-title\"><a href=\"single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
                 display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) +"</small>" + Environment.NewLine);
-                display.Append("<p>" + prod.Description +"</p>" + Environment.NewLine);
+                display.Append("<p>" + prod.Genre +"</p>" + Environment.NewLine);
                 display.Append("<br />");
                 display.Append("<button class=\"button\" runat=\"server\" type=\"button\" onserverclick=\"AddToCart_ServerClick?ID=" + prod.Id + "\">Add to cart</button>" + Environment.NewLine);
                 display.Append("<a href=\"Single.aspx?ID=" + prod.Id +"\" class=\"button muted\">Read Details</a>" + Environment.NewLine);
