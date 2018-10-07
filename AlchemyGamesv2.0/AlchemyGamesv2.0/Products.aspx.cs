@@ -54,7 +54,7 @@ namespace AlchemyGamesv2._0
                 display.Append("<h3 class=\"product-title\"><a href=\"single.aspx?ID=" + prod.Id + "\">"+ prod.Name +"</a></h3>" + Environment.NewLine);
                 display.Append("<small class=\"price\">R" + prod.Price +"</small>" + Environment.NewLine);
                 display.Append("<p>" + prod.Description +"</p>" + Environment.NewLine);
-                display.Append("<button class=\"button\" runat=\"server\" type=\"button\" onserverclick=\"AddToCart_ServerClick?ID=" + prod.Id + "\">Add to cart</button>" + Environment.NewLine);
+                display.Append("<a class=\"button\" runat=\"server\" href=\"ShoppingCart.aspx?ID=" + prod.Id + "\">Add to cart</a>" + Environment.NewLine);
                 display.Append("<a href=\"Single.aspx?ID=" + prod.Id +"\" class=\"button muted\">Read Details</a>" + Environment.NewLine);
                 display.Append("</div>" + Environment.NewLine);
                 display.Append("</div>" + Environment.NewLine);

@@ -150,6 +150,7 @@
     <Content Include="Create Database.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
+    <Content Include="ShoppingCart.aspx" />
     <Content Include="Single.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="Web.config" />
@@ -229,6 +230,13 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Single.aspx.cs">
       <DependentUpon>Single.aspx</DependentUpon>
