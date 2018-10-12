@@ -6,29 +6,31 @@
     <main class="main-content">
         <div class="container" style="margin-top: 10%;">
             <div class="page">
-
-
-                <div>
-                    <div runat="server" class="cheader" id="iheader">
-
-                    </div>
-                    <div class="entry-content">
+                
+                <div class="entry-content">
                     <div class="row">
-                    <div class="col-sm-6 col-md-8">
-                    <div class="addtocart-bar">
-                         <label for="#">Quantity</label>
-                         <select id="prodQuant" runat="server" name="prodQuant">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                         </select>
-                        <asp:Button ID="addToCart" runat="server" Text="Add To Cart" OnClick="AddToCart_Click" />
-                    </div>
-                    </div>
-                    </div>
+                        <div id="iheader" runat="server">
+                        
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <div id="ibody" runat="server">
+                            
+                            </div>
+                            
+
+                            <div class="addtocart-bar">
+                                    <label for="#">Quantity</label>
+                                    <select id="prodQuant" runat="server" name="prodQuant">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                <asp:Button ID="btnAddToCart" runat="server" OnClick="AddToCart_Click" Text="Add To Cart" CssClass="button"/>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-
                
 
                 

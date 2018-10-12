@@ -19,9 +19,7 @@ namespace AlchemyGamesv2._0
                            where g.Id.Equals(Request.QueryString["ID"])
                            select g).FirstOrDefault();
 
-            display = "<div class=\"entry-content>" + Environment.NewLine;
-            display += "<div class=\"row\">" + Environment.NewLine;
-            display += "<div class=\"col-sm-6 col-md-4\">" + Environment.NewLine;
+            display = "<div class=\"col-sm-6 col-md-4\">" + Environment.NewLine;
             display += "<div class=\"product-images\">" + Environment.NewLine;
             display += "<figure class=\"large-image\">" + Environment.NewLine;
             display += "<a href=\"" + game.ImageLink + "\" >" + Environment.NewLine;
@@ -29,32 +27,21 @@ namespace AlchemyGamesv2._0
             display += "</figure>" + Environment.NewLine;
             display += "</div>" + Environment.NewLine;
             display += "</div>" + Environment.NewLine;
-            display += "<div class=\"col-sm-6 col-md-8\">" + Environment.NewLine;
-            display += "<h2 class=\"entry-title\">Need for Speed Rivals</h2>" + Environment.NewLine;
-            display += "<small class=\"price\">$190.00</small>" + Environment.NewLine;
-            display += "<h2 class=\"ntry-title\">Need for Speed Rivals</h2>" + Environment.NewLine;
-            display += "<p>" + game.Description + "</p>" + Environment.NewLine;
-            //display += "<p>descr</p>" + Environment.NewLine;
-            //display += "<p>descr</p>" + Environment.NewLine;
-            //display += "<div class=\"addtocart-bar\">" + Environment.NewLine;
-            //display += "<label for=\"#\"> Quantity </label>" + Environment.NewLine;
-            //display += "<select id=\"prodQuant\" runat=\"server\" name=\"quantity\">" + Environment.NewLine;
-            //display += "<option value=\"1\">1</option>" + Environment.NewLine;
-            //display += "<option value=\"2\">2</option>" + Environment.NewLine;
-            //display += "<option value=\"3\">3</option>" + Environment.NewLine;
-            //display += "</select>" + Environment.NewLine;
-            //display += "<a href=\"ShoppingCart.aspx?ID="+ game.Id +"\" class=\"button\">Add to cart</a>" + Environment.NewLine;
-            //display += "</div>" + Environment.NewLine;
-            display += "</div>" + Environment.NewLine;
-            display += "</div>" + Environment.NewLine;
-            display += "</div>" + Environment.NewLine;
 
             iheader.InnerHtml = display;
+
+            display = "<h2 class=\"entry-title\">"+ game.Name +"</h2>" + Environment.NewLine;
+            display += "<small class=\"price\">"+ game.Price +"</small>" + Environment.NewLine;
+            display += "<p>"+ game.Description +"</p>" + Environment.NewLine;
+
+            ibody.InnerHtml = display;
         }
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {
-
+            var prodID = Request.QueryString["ID"];
+            int val = Convert.ToInt32(prodQuant.Value);
+            ShoppingCart.addItem(Convert.ToInt32(prodID), val);
         }
     }
 }
