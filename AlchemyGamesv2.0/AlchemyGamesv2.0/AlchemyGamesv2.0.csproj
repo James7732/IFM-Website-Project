@@ -72,6 +72,7 @@
       <DependentUpon>AlchemyDatabase.mdf</DependentUpon>
     </Content>
     <Content Include="Cart.aspx" />
+    <Content Include="Checkout.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="css\Alchemy.css" />
     <Content Include="css\main.css" />
@@ -150,7 +151,7 @@
     <Content Include="Create Database.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="ShoppingCart.aspx" />
+    <Content Include="RemoveCartItem.aspx" />
     <Content Include="Single.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="UserManagement.aspx" />
@@ -189,6 +190,13 @@
     </Compile>
     <Compile Include="Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.designer.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -230,14 +238,14 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Secrecy.cs" />
-    <Compile Include="ShoppingCart.aspx.cs">
-      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    <Compile Include="RemoveCartItem.aspx.cs">
+      <DependentUpon>RemoveCartItem.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ShoppingCart.aspx.designer.cs">
-      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    <Compile Include="RemoveCartItem.aspx.designer.cs">
+      <DependentUpon>RemoveCartItem.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Secrecy.cs" />
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Single.aspx.cs">
       <DependentUpon>Single.aspx</DependentUpon>

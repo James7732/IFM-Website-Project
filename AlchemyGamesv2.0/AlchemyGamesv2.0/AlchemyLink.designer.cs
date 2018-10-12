@@ -30,21 +30,24 @@ namespace AlchemyGamesv2._0
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertVoucher(Voucher instance);
+    partial void UpdateVoucher(Voucher instance);
+    partial void DeleteVoucher(Voucher instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
-    partial void InsertComment(Comment instance);
-    partial void UpdateComment(Comment instance);
-    partial void DeleteComment(Comment instance);
-    partial void InsertOrder(Order instance);
-    partial void UpdateOrder(Order instance);
-    partial void DeleteOrder(Order instance);
-    partial void InsertOrder_Product(Order_Product instance);
-    partial void UpdateOrder_Product(Order_Product instance);
-    partial void DeleteOrder_Product(Order_Product instance);
     partial void InsertProduct(Product instance);
     partial void UpdateProduct(Product instance);
     partial void DeleteProduct(Product instance);
+    partial void InsertOrder_Product(Order_Product instance);
+    partial void UpdateOrder_Product(Order_Product instance);
+    partial void DeleteOrder_Product(Order_Product instance);
+    partial void InsertOrder(Order instance);
+    partial void UpdateOrder(Order instance);
+    partial void DeleteOrder(Order instance);
+    partial void InsertComment(Comment instance);
+    partial void UpdateComment(Comment instance);
+    partial void DeleteComment(Comment instance);
     #endregion
 		
 		public AlchemyLinkDataContext() : 
@@ -77,6 +80,14 @@ namespace AlchemyGamesv2._0
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<Voucher> Vouchers
+		{
+			get
+			{
+				return this.GetTable<Voucher>();
+			}
+		}
+		
 		public System.Data.Linq.Table<User> Users
 		{
 			get
@@ -85,19 +96,11 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		public System.Data.Linq.Table<Comment> Comments
+		public System.Data.Linq.Table<Product> Products
 		{
 			get
 			{
-				return this.GetTable<Comment>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Order> Orders
-		{
-			get
-			{
-				return this.GetTable<Order>();
+				return this.GetTable<Product>();
 			}
 		}
 		
@@ -109,11 +112,177 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		public System.Data.Linq.Table<Product> Products
+		public System.Data.Linq.Table<Order> Orders
 		{
 			get
 			{
-				return this.GetTable<Product>();
+				return this.GetTable<Order>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Comment> Comments
+		{
+			get
+			{
+				return this.GetTable<Comment>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vouchers")]
+	public partial class Voucher : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _VoucherName;
+		
+		private string _VoucherCode;
+		
+		private System.Nullable<int> _Quantity;
+		
+		private System.Nullable<int> _Value;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnVoucherNameChanging(string value);
+    partial void OnVoucherNameChanged();
+    partial void OnVoucherCodeChanging(string value);
+    partial void OnVoucherCodeChanged();
+    partial void OnQuantityChanging(System.Nullable<int> value);
+    partial void OnQuantityChanged();
+    partial void OnValueChanging(System.Nullable<int> value);
+    partial void OnValueChanged();
+    #endregion
+		
+		public Voucher()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VoucherName", DbType="VarChar(20)")]
+		public string VoucherName
+		{
+			get
+			{
+				return this._VoucherName;
+			}
+			set
+			{
+				if ((this._VoucherName != value))
+				{
+					this.OnVoucherNameChanging(value);
+					this.SendPropertyChanging();
+					this._VoucherName = value;
+					this.SendPropertyChanged("VoucherName");
+					this.OnVoucherNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VoucherCode", DbType="VarChar(10)")]
+		public string VoucherCode
+		{
+			get
+			{
+				return this._VoucherCode;
+			}
+			set
+			{
+				if ((this._VoucherCode != value))
+				{
+					this.OnVoucherCodeChanging(value);
+					this.SendPropertyChanging();
+					this._VoucherCode = value;
+					this.SendPropertyChanged("VoucherCode");
+					this.OnVoucherCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Int")]
+		public System.Nullable<int> Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Value", DbType="Int")]
+		public System.Nullable<int> Value
+		{
+			get
+			{
+				return this._Value;
+			}
+			set
+			{
+				if ((this._Value != value))
+				{
+					this.OnValueChanging(value);
+					this.SendPropertyChanging();
+					this._Value = value;
+					this.SendPropertyChanged("Value");
+					this.OnValueChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -140,9 +309,11 @@ namespace AlchemyGamesv2._0
 		
 		private string _Username;
 		
-		private EntitySet<Comment> _Comments;
+		private System.Nullable<System.DateTime> _DateRegistered;
 		
 		private EntitySet<Order> _Orders;
+		
+		private EntitySet<Comment> _Comments;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -164,12 +335,14 @@ namespace AlchemyGamesv2._0
     partial void OnAdminChanged();
     partial void OnUsernameChanging(string value);
     partial void OnUsernameChanged();
+    partial void OnDateRegisteredChanging(System.Nullable<System.DateTime> value);
+    partial void OnDateRegisteredChanged();
     #endregion
 		
 		public User()
 		{
-			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
 			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
+			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
 			OnCreated();
 		}
 		
@@ -333,16 +506,23 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_Comments", ThisKey="Id", OtherKey="UserID")]
-		public EntitySet<Comment> Comments
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateRegistered", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DateRegistered
 		{
 			get
 			{
-				return this._Comments;
+				return this._DateRegistered;
 			}
 			set
 			{
-				this._Comments.Assign(value);
+				if ((this._DateRegistered != value))
+				{
+					this.OnDateRegisteredChanging(value);
+					this.SendPropertyChanging();
+					this._DateRegistered = value;
+					this.SendPropertyChanged("DateRegistered");
+					this.OnDateRegisteredChanged();
+				}
 			}
 		}
 		
@@ -356,6 +536,19 @@ namespace AlchemyGamesv2._0
 			set
 			{
 				this._Orders.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_Comments", ThisKey="Id", OtherKey="UserID")]
+		public EntitySet<Comment> Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				this._Comments.Assign(value);
 			}
 		}
 		
@@ -379,18 +572,6 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		private void attach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
 		private void attach_Orders(Order entity)
 		{
 			this.SendPropertyChanging();
@@ -402,25 +583,47 @@ namespace AlchemyGamesv2._0
 			this.SendPropertyChanging();
 			entity.User = null;
 		}
+		
+		private void attach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comments")]
-	public partial class Comment : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
+	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _Comment1;
+		private string _Name;
 		
-		private int _UserID;
+		private decimal _Price;
 		
-		private int _ProductID;
+		private string _Description;
 		
-		private EntityRef<User> _User;
+		private string _ImageLink;
 		
-		private EntityRef<Product> _Product;
+		private System.Nullable<int> _StockLevels;
+		
+		private string _Platfrom;
+		
+		private string _Type;
+		
+		private string _Genre;
+		
+		private EntitySet<Order_Product> _Order_Products;
+		
+		private EntitySet<Comment> _Comments;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -428,18 +631,28 @@ namespace AlchemyGamesv2._0
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnComment1Changing(string value);
-    partial void OnComment1Changed();
-    partial void OnUserIDChanging(int value);
-    partial void OnUserIDChanged();
-    partial void OnProductIDChanging(int value);
-    partial void OnProductIDChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnPriceChanging(decimal value);
+    partial void OnPriceChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnImageLinkChanging(string value);
+    partial void OnImageLinkChanged();
+    partial void OnStockLevelsChanging(System.Nullable<int> value);
+    partial void OnStockLevelsChanged();
+    partial void OnPlatfromChanging(string value);
+    partial void OnPlatfromChanged();
+    partial void OnTypeChanging(string value);
+    partial void OnTypeChanged();
+    partial void OnGenreChanging(string value);
+    partial void OnGenreChanged();
     #endregion
 		
-		public Comment()
+		public Product()
 		{
-			this._User = default(EntityRef<User>);
-			this._Product = default(EntityRef<Product>);
+			this._Order_Products = new EntitySet<Order_Product>(new Action<Order_Product>(this.attach_Order_Products), new Action<Order_Product>(this.detach_Order_Products));
+			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
 			OnCreated();
 		}
 		
@@ -463,46 +676,312 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Comment", Storage="_Comment1", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Comment1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Name
 		{
 			get
 			{
-				return this._Comment1;
+				return this._Name;
 			}
 			set
 			{
-				if ((this._Comment1 != value))
+				if ((this._Name != value))
 				{
-					this.OnComment1Changing(value);
+					this.OnNameChanging(value);
 					this.SendPropertyChanging();
-					this._Comment1 = value;
-					this.SendPropertyChanged("Comment1");
-					this.OnComment1Changed();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
-		public int UserID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Money NOT NULL")]
+		public decimal Price
 		{
 			get
 			{
-				return this._UserID;
+				return this._Price;
 			}
 			set
 			{
-				if ((this._UserID != value))
+				if ((this._Price != value))
 				{
-					if (this._User.HasLoadedOrAssignedValue)
+					this.OnPriceChanging(value);
+					this.SendPropertyChanging();
+					this._Price = value;
+					this.SendPropertyChanged("Price");
+					this.OnPriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(MAX)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageLink", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string ImageLink
+		{
+			get
+			{
+				return this._ImageLink;
+			}
+			set
+			{
+				if ((this._ImageLink != value))
+				{
+					this.OnImageLinkChanging(value);
+					this.SendPropertyChanging();
+					this._ImageLink = value;
+					this.SendPropertyChanged("ImageLink");
+					this.OnImageLinkChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockLevels", DbType="Int")]
+		public System.Nullable<int> StockLevels
+		{
+			get
+			{
+				return this._StockLevels;
+			}
+			set
+			{
+				if ((this._StockLevels != value))
+				{
+					this.OnStockLevelsChanging(value);
+					this.SendPropertyChanging();
+					this._StockLevels = value;
+					this.SendPropertyChanged("StockLevels");
+					this.OnStockLevelsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Platfrom", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string Platfrom
+		{
+			get
+			{
+				return this._Platfrom;
+			}
+			set
+			{
+				if ((this._Platfrom != value))
+				{
+					this.OnPlatfromChanging(value);
+					this.SendPropertyChanging();
+					this._Platfrom = value;
+					this.SendPropertyChanged("Platfrom");
+					this.OnPlatfromChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this.OnTypeChanging(value);
+					this.SendPropertyChanging();
+					this._Type = value;
+					this.SendPropertyChanged("Type");
+					this.OnTypeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Genre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Genre
+		{
+			get
+			{
+				return this._Genre;
+			}
+			set
+			{
+				if ((this._Genre != value))
+				{
+					this.OnGenreChanging(value);
+					this.SendPropertyChanging();
+					this._Genre = value;
+					this.SendPropertyChanged("Genre");
+					this.OnGenreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Order_Product", Storage="_Order_Products", ThisKey="Id", OtherKey="ProductID")]
+		public EntitySet<Order_Product> Order_Products
+		{
+			get
+			{
+				return this._Order_Products;
+			}
+			set
+			{
+				this._Order_Products.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Comment", Storage="_Comments", ThisKey="Id", OtherKey="ProductID")]
+		public EntitySet<Comment> Comments
+		{
+			get
+			{
+				return this._Comments;
+			}
+			set
+			{
+				this._Comments.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Order_Products(Order_Product entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Order_Products(Order_Product entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+		
+		private void attach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = this;
+		}
+		
+		private void detach_Comments(Comment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Product = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Order/Product]")]
+	public partial class Order_Product : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _OrderID;
+		
+		private int _ProductID;
+		
+		private EntityRef<Product> _Product;
+		
+		private EntityRef<Order> _Order;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnOrderIDChanging(int value);
+    partial void OnOrderIDChanged();
+    partial void OnProductIDChanging(int value);
+    partial void OnProductIDChanged();
+    #endregion
+		
+		public Order_Product()
+		{
+			this._Product = default(EntityRef<Product>);
+			this._Order = default(EntityRef<Order>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderID", DbType="Int NOT NULL")]
+		public int OrderID
+		{
+			get
+			{
+				return this._OrderID;
+			}
+			set
+			{
+				if ((this._OrderID != value))
+				{
+					if (this._Order.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnUserIDChanging(value);
+					this.OnOrderIDChanging(value);
 					this.SendPropertyChanging();
-					this._UserID = value;
-					this.SendPropertyChanged("UserID");
-					this.OnUserIDChanged();
+					this._OrderID = value;
+					this.SendPropertyChanged("OrderID");
+					this.OnOrderIDChanged();
 				}
 			}
 		}
@@ -531,41 +1010,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_User", ThisKey="UserID", OtherKey="Id", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Comments.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Comments.Add(this);
-						this._UserID = value.Id;
-					}
-					else
-					{
-						this._UserID = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Comment", Storage="_Product", ThisKey="ProductID", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Order_Product", Storage="_Product", ThisKey="ProductID", OtherKey="Id", IsForeignKey=true)]
 		public Product Product
 		{
 			get
@@ -582,12 +1027,12 @@ namespace AlchemyGamesv2._0
 					if ((previousValue != null))
 					{
 						this._Product.Entity = null;
-						previousValue.Comments.Remove(this);
+						previousValue.Order_Products.Remove(this);
 					}
 					this._Product.Entity = value;
 					if ((value != null))
 					{
-						value.Comments.Add(this);
+						value.Order_Products.Add(this);
 						this._ProductID = value.Id;
 					}
 					else
@@ -595,6 +1040,40 @@ namespace AlchemyGamesv2._0
 						this._ProductID = default(int);
 					}
 					this.SendPropertyChanged("Product");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Order_Product", Storage="_Order", ThisKey="OrderID", OtherKey="Id", IsForeignKey=true)]
+		public Order Order
+		{
+			get
+			{
+				return this._Order.Entity;
+			}
+			set
+			{
+				Order previousValue = this._Order.Entity;
+				if (((previousValue != value) 
+							|| (this._Order.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Order.Entity = null;
+						previousValue.Order_Products.Remove(this);
+					}
+					this._Order.Entity = value;
+					if ((value != null))
+					{
+						value.Order_Products.Add(this);
+						this._OrderID = value.Id;
+					}
+					else
+					{
+						this._OrderID = default(int);
+					}
+					this.SendPropertyChanged("Order");
 				}
 			}
 		}
@@ -628,7 +1107,7 @@ namespace AlchemyGamesv2._0
 		
 		private int _Id;
 		
-		private decimal _Amount;
+		private double _Amount;
 		
 		private System.DateTime _Date;
 		
@@ -640,7 +1119,7 @@ namespace AlchemyGamesv2._0
 		
 		private string _Address;
 		
-		private string _Suburb;
+		private string _Suberb;
 		
 		private string _City;
 		
@@ -660,7 +1139,7 @@ namespace AlchemyGamesv2._0
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnAmountChanging(decimal value);
+    partial void OnAmountChanging(double value);
     partial void OnAmountChanged();
     partial void OnDateChanging(System.DateTime value);
     partial void OnDateChanged();
@@ -672,8 +1151,8 @@ namespace AlchemyGamesv2._0
     partial void OnUserIDChanged();
     partial void OnAddressChanging(string value);
     partial void OnAddressChanged();
-    partial void OnSuburbChanging(string value);
-    partial void OnSuburbChanged();
+    partial void OnSuberbChanging(string value);
+    partial void OnSuberbChanged();
     partial void OnCityChanging(string value);
     partial void OnCityChanged();
     partial void OnProvinceChanging(string value);
@@ -711,8 +1190,8 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Decimal(2,0) NOT NULL")]
-		public decimal Amount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Amount", DbType="Float NOT NULL")]
+		public double Amount
 		{
 			get
 			{
@@ -835,22 +1314,22 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Suburb", DbType="VarChar(255)")]
-		public string Suburb
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Suberb", DbType="VarChar(255)")]
+		public string Suberb
 		{
 			get
 			{
-				return this._Suburb;
+				return this._Suberb;
 			}
 			set
 			{
-				if ((this._Suburb != value))
+				if ((this._Suberb != value))
 				{
-					this.OnSuburbChanging(value);
+					this.OnSuberbChanging(value);
 					this.SendPropertyChanging();
-					this._Suburb = value;
-					this.SendPropertyChanged("Suburb");
-					this.OnSuburbChanged();
+					this._Suberb = value;
+					this.SendPropertyChanged("Suberb");
+					this.OnSuberbChanged();
 				}
 			}
 		}
@@ -1015,21 +1494,23 @@ namespace AlchemyGamesv2._0
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.[Order/Product]")]
-	public partial class Order_Product : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Comments")]
+	public partial class Comment : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private int _OrderID;
+		private string _Comment1;
+		
+		private int _UserID;
 		
 		private int _ProductID;
 		
-		private EntityRef<Order> _Order;
-		
 		private EntityRef<Product> _Product;
+		
+		private EntityRef<User> _User;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1037,16 +1518,18 @@ namespace AlchemyGamesv2._0
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnOrderIDChanging(int value);
-    partial void OnOrderIDChanged();
+    partial void OnComment1Changing(string value);
+    partial void OnComment1Changed();
+    partial void OnUserIDChanging(int value);
+    partial void OnUserIDChanged();
     partial void OnProductIDChanging(int value);
     partial void OnProductIDChanged();
     #endregion
 		
-		public Order_Product()
+		public Comment()
 		{
-			this._Order = default(EntityRef<Order>);
 			this._Product = default(EntityRef<Product>);
+			this._User = default(EntityRef<User>);
 			OnCreated();
 		}
 		
@@ -1070,26 +1553,46 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OrderID", DbType="Int NOT NULL")]
-		public int OrderID
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Comment", Storage="_Comment1", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Comment1
 		{
 			get
 			{
-				return this._OrderID;
+				return this._Comment1;
 			}
 			set
 			{
-				if ((this._OrderID != value))
+				if ((this._Comment1 != value))
 				{
-					if (this._Order.HasLoadedOrAssignedValue)
+					this.OnComment1Changing(value);
+					this.SendPropertyChanging();
+					this._Comment1 = value;
+					this.SendPropertyChanged("Comment1");
+					this.OnComment1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="Int NOT NULL")]
+		public int UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnOrderIDChanging(value);
+					this.OnUserIDChanging(value);
 					this.SendPropertyChanging();
-					this._OrderID = value;
-					this.SendPropertyChanged("OrderID");
-					this.OnOrderIDChanged();
+					this._UserID = value;
+					this.SendPropertyChanged("UserID");
+					this.OnUserIDChanged();
 				}
 			}
 		}
@@ -1118,41 +1621,7 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Order_Order_Product", Storage="_Order", ThisKey="OrderID", OtherKey="Id", IsForeignKey=true)]
-		public Order Order
-		{
-			get
-			{
-				return this._Order.Entity;
-			}
-			set
-			{
-				Order previousValue = this._Order.Entity;
-				if (((previousValue != value) 
-							|| (this._Order.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Order.Entity = null;
-						previousValue.Order_Products.Remove(this);
-					}
-					this._Order.Entity = value;
-					if ((value != null))
-					{
-						value.Order_Products.Add(this);
-						this._OrderID = value.Id;
-					}
-					else
-					{
-						this._OrderID = default(int);
-					}
-					this.SendPropertyChanged("Order");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Order_Product", Storage="_Product", ThisKey="ProductID", OtherKey="Id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Comment", Storage="_Product", ThisKey="ProductID", OtherKey="Id", IsForeignKey=true)]
 		public Product Product
 		{
 			get
@@ -1169,12 +1638,12 @@ namespace AlchemyGamesv2._0
 					if ((previousValue != null))
 					{
 						this._Product.Entity = null;
-						previousValue.Order_Products.Remove(this);
+						previousValue.Comments.Remove(this);
 					}
 					this._Product.Entity = value;
 					if ((value != null))
 					{
-						value.Order_Products.Add(this);
+						value.Comments.Add(this);
 						this._ProductID = value.Id;
 					}
 					else
@@ -1186,289 +1655,37 @@ namespace AlchemyGamesv2._0
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Product")]
-	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Name;
-		
-		private decimal _Price;
-		
-		private string _Description;
-		
-		private string _ImageLink;
-		
-		private int _StockLevels;
-		
-		private string _Platfrom;
-		
-		private string _Type;
-		
-		private string _Genre;
-		
-		private EntitySet<Comment> _Comments;
-		
-		private EntitySet<Order_Product> _Order_Products;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnPriceChanging(decimal value);
-    partial void OnPriceChanged();
-    partial void OnDescriptionChanging(string value);
-    partial void OnDescriptionChanged();
-    partial void OnImageLinkChanging(string value);
-    partial void OnImageLinkChanged();
-    partial void OnStockLevelsChanging(int value);
-    partial void OnStockLevelsChanged();
-    partial void OnPlatfromChanging(string value);
-    partial void OnPlatfromChanged();
-    partial void OnTypeChanging(string value);
-    partial void OnTypeChanged();
-    partial void OnGenreChanging(string value);
-    partial void OnGenreChanged();
-    #endregion
-		
-		public Product()
-		{
-			this._Comments = new EntitySet<Comment>(new Action<Comment>(this.attach_Comments), new Action<Comment>(this.detach_Comments));
-			this._Order_Products = new EntitySet<Order_Product>(new Action<Order_Product>(this.attach_Order_Products), new Action<Order_Product>(this.detach_Order_Products));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Comment", Storage="_User", ThisKey="UserID", OtherKey="Id", IsForeignKey=true)]
+		public User User
 		{
 			get
 			{
-				return this._Id;
+				return this._User.Entity;
 			}
 			set
 			{
-				if ((this._Id != value))
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnIdChanging(value);
 					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Comments.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Comments.Add(this);
+						this._UserID = value.Id;
+					}
+					else
+					{
+						this._UserID = default(int);
+					}
+					this.SendPropertyChanged("User");
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Price", DbType="Decimal(2,0) NOT NULL")]
-		public decimal Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this.OnPriceChanging(value);
-					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(MAX)")]
-		public string Description
-		{
-			get
-			{
-				return this._Description;
-			}
-			set
-			{
-				if ((this._Description != value))
-				{
-					this.OnDescriptionChanging(value);
-					this.SendPropertyChanging();
-					this._Description = value;
-					this.SendPropertyChanged("Description");
-					this.OnDescriptionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageLink", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string ImageLink
-		{
-			get
-			{
-				return this._ImageLink;
-			}
-			set
-			{
-				if ((this._ImageLink != value))
-				{
-					this.OnImageLinkChanging(value);
-					this.SendPropertyChanging();
-					this._ImageLink = value;
-					this.SendPropertyChanged("ImageLink");
-					this.OnImageLinkChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StockLevels", DbType="Int NOT NULL")]
-		public int StockLevels
-		{
-			get
-			{
-				return this._StockLevels;
-			}
-			set
-			{
-				if ((this._StockLevels != value))
-				{
-					this.OnStockLevelsChanging(value);
-					this.SendPropertyChanging();
-					this._StockLevels = value;
-					this.SendPropertyChanged("StockLevels");
-					this.OnStockLevelsChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Platfrom", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
-		public string Platfrom
-		{
-			get
-			{
-				return this._Platfrom;
-			}
-			set
-			{
-				if ((this._Platfrom != value))
-				{
-					this.OnPlatfromChanging(value);
-					this.SendPropertyChanging();
-					this._Platfrom = value;
-					this.SendPropertyChanged("Platfrom");
-					this.OnPlatfromChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
-		public string Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this.OnTypeChanging(value);
-					this.SendPropertyChanging();
-					this._Type = value;
-					this.SendPropertyChanged("Type");
-					this.OnTypeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Genre", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string Genre
-		{
-			get
-			{
-				return this._Genre;
-			}
-			set
-			{
-				if ((this._Genre != value))
-				{
-					this.OnGenreChanging(value);
-					this.SendPropertyChanging();
-					this._Genre = value;
-					this.SendPropertyChanged("Genre");
-					this.OnGenreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Comment", Storage="_Comments", ThisKey="Id", OtherKey="ProductID")]
-		public EntitySet<Comment> Comments
-		{
-			get
-			{
-				return this._Comments;
-			}
-			set
-			{
-				this._Comments.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Product_Order_Product", Storage="_Order_Products", ThisKey="Id", OtherKey="ProductID")]
-		public EntitySet<Order_Product> Order_Products
-		{
-			get
-			{
-				return this._Order_Products;
-			}
-			set
-			{
-				this._Order_Products.Assign(value);
 			}
 		}
 		
@@ -1490,30 +1707,6 @@ namespace AlchemyGamesv2._0
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = this;
-		}
-		
-		private void detach_Comments(Comment entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
-		}
-		
-		private void attach_Order_Products(Order_Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = this;
-		}
-		
-		private void detach_Order_Products(Order_Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Product = null;
 		}
 	}
 }

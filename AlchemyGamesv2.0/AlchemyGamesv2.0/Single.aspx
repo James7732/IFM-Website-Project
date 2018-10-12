@@ -6,16 +6,35 @@
     <main class="main-content">
         <div class="container" style="margin-top: 10%;">
             <div class="page">
+                
+                <div class="entry-content">
+                    <div class="row">
+                        <div id="iheader" runat="server">
+                        
+                        </div>
+                        <div class="col-sm-6 col-md-8">
+                            <div id="ibody" runat="server">
+                            
+                            </div>
+                            
 
+                            <div class="addtocart-bar">
+                                    <label for="#">Quantity</label>
+                                    <select id="prodQuant" runat="server" name="prodQuant">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                <asp:Button ID="btnAddToCart" runat="server" OnClick="AddToCart_Click" Text="Add To Cart" CssClass="button"/>
 
-                <div runat="server" class="cheader" id="iheader">
-
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
                
 
-                <!--
-                <div class="entry-content">
+                
+                <%--<div class="entry-content">
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="product-images">
@@ -24,35 +43,25 @@
                                         <img src="dummy/single-game-cover.jpg" alt=""></a>
                                 </figure>
 
-                                <div class="thumbnails">
-                                    <a href="dummy/image-2.jpg">
-                                        <img src="dummy/small-thumb-1.jpg" alt=""></a>
-                                    <a href="dummy/image-3.jpg">
-                                        <img src="dummy/small-thumb-2.jpg" alt=""></a>
-                                    <a href="dummy/image-4.jpg">
-                                        <img src="dummy/small-thumb-3.jpg" alt=""></a>
-                                </div>
-
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-8">
                             <h2 class="entry-title">Need for Speed Rivals</h2>
                             <small class="price">$190.00</small>
 
-                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                            <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod.</p>
+                            <p>descr</p>
+                            <p>descr</p>
+                            <p>descr</p>
 
                             <div class="addtocart-bar">
-                                <form action="#">
                                     <label for="#">Quantity</label>
-                                    <select name="#">
+                                    <select id="prodQuant" runat="server" name="prodQuant">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
                                     </select>
+                                    <p id="dispQuant" runat="server">Value: </p>
                                     <input type="submit" value="Add to cart">
-                                </form>
 
                                 
                                 <div class="social-links square">
@@ -66,10 +75,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>--%>
 
                 
-                <section>
+                <%--<section>
                     <header>
                         <h2 class="section-title">Similiar Product</h2>
                     </header>
@@ -127,8 +136,8 @@
                         </div>
 
                     </div>
-                </section>
-                -->
+                </section>--%>
+                
 
             </div>
         </div>

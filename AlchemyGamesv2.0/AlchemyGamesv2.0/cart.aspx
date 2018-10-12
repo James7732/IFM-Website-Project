@@ -85,13 +85,13 @@
                 </table>
                 <!-- .cart -->
 
-                <div class="cart-total">
-                    <p><strong>Subtotal:</strong> $650.00</p>
-                    <p><strong>Shipment:</strong> $15.00</p>
-                    <p class="total"><strong>Total</strong><span class="num">$665.00</span></p>
+                <div class="cart-total" id="cartTotal" runat="server">
+                    <p id="subTotal" runat="server"> </p>
+                    <p><strong>Shipment:</strong> R50.00</p>
+                    <p class="total" id="total" runat="server"></p>
                     <p>
-                        <a href="#" class="button muted">Continue Shopping</a>
-                        <a href="#" class="button">Finalize and pay</a>
+                        <a href="HomePage.aspx" class="button muted">Continue Shopping</a>
+                        <asp:Button ID="btnCheckout" runat="server" Text="Check out" OnClick="BtnCheckout_Click" />
                     </p>
                 </div>
                 <!-- .cart-total -->
