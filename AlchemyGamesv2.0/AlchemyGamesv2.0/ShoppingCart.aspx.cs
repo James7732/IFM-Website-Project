@@ -13,7 +13,7 @@ namespace AlchemyGamesv2._0
         {
             var prodID = Request.QueryString["ID"];
             ShoppingCart.addItem(Convert.ToInt32(prodID), 1);
-            Response.Redirect("Products.aspx");
+            Response.Redirect("Single.aspx?ID="+ prodID +"");
         }
     }
 }
