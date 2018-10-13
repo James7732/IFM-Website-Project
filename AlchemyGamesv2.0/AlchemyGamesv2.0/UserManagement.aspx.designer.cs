@@ -22,13 +22,13 @@ namespace AlchemyGamesv2._0 {
         protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// emailID control.
+        /// email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl emailID;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl email;
         
         /// <summary>
         /// label2 control.
@@ -146,5 +146,14 @@ namespace AlchemyGamesv2._0 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlButton btnChange;
+        
+        /// <summary>
+        /// changeMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl changeMsg;
     }
 }

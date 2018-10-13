@@ -8,7 +8,7 @@
         <h3> Fill out the fields you wish to change</h3>
         <asp:Label ID="label1" runat="server"><font size="5">Email</font></asp:Label>
         <br>
-        <input type="email" placeholder="New email address" runat="server" id="emailID">
+        <input type="email" placeholder="New email address" runat="server" id="email">
         <br>
         <asp:Label ID="label2" runat="server"><font size="5">Password</font></asp:Label>
         <br>
@@ -35,10 +35,11 @@
         <input type="text" placeholder="New username" runat="server" id="uName">
         <br>
         <br>
-        <button id="btnChange" runat="server" type="submit" onclick="Change_ServerClick">
+        <button id="btnChange" type="submit" onserverclick="Change_Click" runat="server">
 		 Submit Details
 		</button>
         <br>
+        <div id="changeMsg" runat="server">   </div>
      </div>
             
 </asp:Content>
