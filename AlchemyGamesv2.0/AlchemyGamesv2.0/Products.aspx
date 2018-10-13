@@ -34,7 +34,7 @@
 										<option value="#">24</option>
 									</select>
 								</span>
-							</div> <!-- .filter -->
+							</div>
 
 							<div class="pagination">
 								<a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
@@ -44,15 +44,12 @@
 								<a href="#" class="page-number">...</a>
 								<a href="#" class="page-number">12</a>
 								<a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
-							</div> <!-- .pagination -->
-						</div> <!-- .filter-bar -->
+							</div>
 
                 <div id="prodList" runat="server" class="product-list">
                    <h1 id="testMsg" runat="server"></h1>
-                    <!-- .product -->
 
                 </div>
-                <!-- .product-list -->
 
                 <div class="pagination-bar">
                     <div class="pagination">
@@ -64,11 +61,8 @@
                         <a href="#" class="page-number">12</a>
                         <a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
                     </div>
-                    <!-- .pagination -->
                 </div>
             </div>
         </div>
-        <!-- .container -->
     </main>
-    <!-- .main-content -->
 </asp:Content>

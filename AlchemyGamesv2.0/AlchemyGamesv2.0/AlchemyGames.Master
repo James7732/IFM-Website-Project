@@ -90,6 +90,7 @@
 									<li><a href="HomePage.aspx"> <font color="#45b77d"> Home </font> </a></li>
 									<li><a href="Login.aspx"> <font color="#45b77d"> Login </font> </a></li>
 									<li><a href="Register.aspx"> <font color="#45b77d"> Register </font> </a></li>
+                                    <li><a href="Contact.aspx"> <font color="#45b77d"> Contact Us </font> </a></li>
                                     <!--
 									<li><a href="Account.aspx"> <font color="#45b77d"> My Account </font> </a></li>
 									<li><a href="AddAGame.aspx"> <font color="#45b77d"> Add A Game </font> </a></li>
