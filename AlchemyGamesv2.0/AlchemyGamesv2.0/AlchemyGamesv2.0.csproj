@@ -123,6 +123,7 @@
     <Content Include="dummy\small-thumb-2.jpg" />
     <Content Include="dummy\small-thumb-3%402x.jpg" />
     <Content Include="dummy\small-thumb-3.jpg" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\font-awesome.min.css" />
@@ -154,6 +155,7 @@
     <Content Include="ProductDeletion.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RemoveCartItem.aspx" />
+    <Content Include="SelectProduct.aspx" />
     <Content Include="Single.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="UserManagement.aspx" />
@@ -206,6 +208,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -262,6 +271,13 @@
       <DependentUpon>RemoveCartItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
+    <Compile Include="SelectProduct.aspx.cs">
+      <DependentUpon>SelectProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectProduct.aspx.designer.cs">
+      <DependentUpon>SelectProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Single.aspx.cs">
       <DependentUpon>Single.aspx</DependentUpon>
