@@ -46,17 +46,24 @@ namespace AlchemyGamesv2._0
                 cartDisplay.InnerHtml = display.ToString();
             }
 
-            dynamic prods = from Product p in db.Products
-                           select p;
-
             double subtotal = 0;
             double Total = 0;
-            foreach(Product p in prods)
+            List<int> CartItems = ShoppingCart.getCartItems();
+            for (int i = 0; i < CartItems.Count; i++)
             {
-                //this is wrong
-                subtotal += Convert.ToDouble(p.Price);
+                var product = (from prod in db.Products
+                               where prod.Id.Equals(CartItems.ElementAt(i))
+                               select prod).FirstOrDefault();
+
+                double price = Convert.ToDouble(product.Price);
+                subtotal += price;
             }
+
+            //the 50.0 is shipping fee
+            //that should be based on wheather or not the product is hard copy
+            //or digital
             Total = subtotal + 50.0;
+
             subTotal.InnerHtml = "<strong> Subtotal:</strong> R"+ subtotal +"";
             total.InnerHtml = "<strong>Total</strong><span class=\"num\">R"+ Total +"</span><strong>Total</strong><span class=\"num\">R"+ Total +"";
         }
@@ -67,12 +74,6 @@ namespace AlchemyGamesv2._0
 
             if(Session["Admin"] != null)
             {
-                //need code before this
-                //Order order = new Order
-                //{
-                //    //Amount = 
-                //}
-
                 Response.Redirect("Checkout.aspx");
             }
             else

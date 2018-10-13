@@ -13,6 +13,7 @@ namespace AlchemyGamesv2._0
         protected void Page_Load(object sender, EventArgs e)
         {
             Session["Admin"] = null;
+            Session["UserID"] = null;
         }
 
         protected void Register_ServerClick(object sender, EventArgs e)
@@ -33,8 +34,18 @@ namespace AlchemyGamesv2._0
            
             if(user != null)
             {
-                Session["Admin"] = user.Admin;
-                Response.Redirect("HomePage.aspx");
+                if (Request.QueryString["ID"].Equals("checkout"))
+                {
+                    Session["UserID"] = user.Id;
+                    Session["Admin"] = user.Admin;
+                    Response.Redirect("Checkout.aspx");
+                }
+                else
+                {
+                    Session["UserID"] = user.Id;
+                    Session["Admin"] = user.Admin;
+                    Response.Redirect("HomePage.aspx");
+                }
             } else
             {
                 userMsg.InnerHtml = "<h1 style=\"color: red\">User details not found. Please try again.</h1>";
