@@ -151,6 +151,7 @@
     <Content Include="Create Database.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ProductAddition.aspx" />
+    <Content Include="ProductDeletion.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RemoveCartItem.aspx" />
     <Content Include="Single.aspx" />
@@ -233,6 +234,13 @@
     </Compile>
     <Compile Include="ProductAddition.aspx.designer.cs">
       <DependentUpon>ProductAddition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDeletion.aspx.cs">
+      <DependentUpon>ProductDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDeletion.aspx.designer.cs">
+      <DependentUpon>ProductDeletion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
