@@ -61,7 +61,7 @@ namespace AlchemyGamesv2._0
 
         public static void removeAll()
         {
-            for(int i = 0; i < CartItems.Count; i++)
+            for(int i = CartItems.Count; i < 0; i--)
             {
                 CartItems.RemoveAt(i);
             }
