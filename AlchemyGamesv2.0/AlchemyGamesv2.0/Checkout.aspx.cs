@@ -54,6 +54,13 @@ namespace AlchemyGamesv2._0
 
             foreach(int prodID in ShoppingCart.getCartItems())
             {
+                var product = (from p in db.Products
+                               where p.Id.Equals(prodID)
+                               select p).ToList().FirstOrDefault();
+                product.StockLevels = product.StockLevels - 1;
+                db.SubmitChanges();
+
+
                 var oderProd = new Order_Product
                 {
                     OrderID = ordedrID.Id,
@@ -63,6 +70,8 @@ namespace AlchemyGamesv2._0
                 db.Order_Products.InsertOnSubmit(oderProd);
                 db.SubmitChanges();
             }
+
+            ShoppingCart.removeAll();
 
             cartDetails.InnerHtml = "<h1 style=\"color: red\">Items checked out</h1>";
         }

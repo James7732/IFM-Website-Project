@@ -59,6 +59,14 @@ namespace AlchemyGamesv2._0
             return CartItems.Count;
         }
 
+        public static void removeAll()
+        {
+            for(int i = 0; i < CartItems.Count; i++)
+            {
+                CartItems.RemoveAt(i);
+            }
+        }
+
         public static int getNumProd(int itemID)
         {
             int retVal = 0;
