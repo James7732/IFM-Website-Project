@@ -12,6 +12,7 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             Session["Admin"] = null;
             Session["UserID"] = null;
         }
@@ -34,13 +35,13 @@ namespace AlchemyGamesv2._0
            
             if(user != null)
             {
-                if (Request.QueryString["ID"].Equals("checkout"))
-                {
-                    Session["UserID"] = user.Id;
-                    Session["Admin"] = user.Admin;
-                    Response.Redirect("Checkout.aspx");
-                }
-                else
+                //if (Request.QueryString["ID"].Equals("checkout"))
+                //{
+                //    Session["UserID"] = user.Id;
+                //    Session["Admin"] = user.Admin;
+                //    Response.Redirect("Checkout.aspx");
+                //}
+                //else
                 {
                     Session["UserID"] = user.Id;
                     Session["Admin"] = user.Admin;
