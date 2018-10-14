@@ -12,7 +12,16 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            var db = new AlchemyLinkDataContext();
+            int currentUserID = (int)Session["UserID"];
+            var currentUser = (from User u in db.Users
+                               where u.Id.Equals(currentUserID)
+                               select u).FirstOrDefault();
+            accountInfo.InnerHtml = "Email: " + currentUser.Email + "<br>" +
+                "First Name: " + currentUser.FirstName + "<br>" +
+                "Surname: " + currentUser.Surname + "<br>" +
+                "Phone Number: " + currentUser.Phone + "<br>" +
+                "Username: " + currentUser.Username + "<br>";
         }
 
         protected void Change_Click(object sender, EventArgs e)
@@ -21,10 +30,9 @@ namespace AlchemyGamesv2._0
             //this line prevents conflict exception when updating multiple fields
             db.Refresh(System.Data.Linq.RefreshMode.OverwriteCurrentValues);
 
-            //fix after login is working again
-            //int currentUserID = (int)Session["UserID"];
+            int currentUserID = (int)Session["UserID"];
             var currentUser = (from User u in db.Users
-                               where u.Id.Equals(2)
+                               where u.Id.Equals(currentUserID)
                                select u).FirstOrDefault();
 
             if (email.Value != "")
@@ -57,13 +65,7 @@ namespace AlchemyGamesv2._0
                 currentUser.Username = uName.Value;
             }
             db.SubmitChanges();
-            email.Value = "";
-            password.Value = "";
-            cPassword.Value = "";
-            fName.Value = "";
-            sName.Value = "";
-            pNumber.Value = "";
-            uName.Value = "";
+            Response.Redirect("UserManagement.aspx");
         }
     }
 }

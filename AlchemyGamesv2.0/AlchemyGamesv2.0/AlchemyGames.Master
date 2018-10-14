@@ -53,7 +53,7 @@
 						<a id="login" runat ="server" href="Login.aspx">Login / Register</a>
                         <a id="logout" runat ="server" href="Login.aspx">Logout</a>
 						<!--<a id="register" runat="server" href="Register.aspx">Register</a>-->
-                        <a id="account" runat="server" href="Account.aspx">My Account</a>
+                        <a id="account" runat="server" href="UserManagement.aspx">My Account</a>
                         <a href="Contact.aspx">Contact Us</a>
                         <a id="adminPage" runat ="server" href="Admin.aspx">Admin</a>
 					</div>
@@ -90,6 +90,7 @@
 									<li><a href="HomePage.aspx"> <font color="#45b77d"> Home </font> </a></li>
 									<li><a href="Login.aspx"> <font color="#45b77d"> Login </font> </a></li>
 									<li><a href="Register.aspx"> <font color="#45b77d"> Register </font> </a></li>
+                                    <li><a href="Contact.aspx"> <font color="#45b77d"> Contact Us </font> </a></li>
                                     <!--
 									<li><a href="Account.aspx"> <font color="#45b77d"> My Account </font> </a></li>
 									<li><a href="AddAGame.aspx"> <font color="#45b77d"> Add A Game </font> </a></li>

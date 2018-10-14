@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
+        <h1 class="section-title"> Current Account Details</h1>
+        <div id="accountInfo" runat="server">   </div>
         <br>
         <h1 class="section-title"> New Account Details</h1>
         <h3> Fill out the fields you wish to change</h3>

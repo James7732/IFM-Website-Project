@@ -123,6 +123,7 @@
     <Content Include="dummy\small-thumb-2.jpg" />
     <Content Include="dummy\small-thumb-3%402x.jpg" />
     <Content Include="dummy\small-thumb-3.jpg" />
+    <Content Include="EditProduct.aspx" />
     <Content Include="fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
     <Content Include="fonts\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\font-awesome.min.css" />
@@ -150,8 +151,11 @@
     <Content Include="HomePage.aspx" />
     <Content Include="Create Database.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ProductAddition.aspx" />
+    <Content Include="ProductDeletion.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="RemoveCartItem.aspx" />
+    <Content Include="SelectProduct.aspx" />
     <Content Include="Single.aspx" />
     <Content Include="Products.aspx" />
     <Content Include="UserManagement.aspx" />
@@ -205,6 +209,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditProduct.aspx.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProduct.aspx.designer.cs">
+      <DependentUpon>EditProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,6 +237,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProductAddition.aspx.cs">
+      <DependentUpon>ProductAddition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductAddition.aspx.designer.cs">
+      <DependentUpon>ProductAddition.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductDeletion.aspx.cs">
+      <DependentUpon>ProductDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDeletion.aspx.designer.cs">
+      <DependentUpon>ProductDeletion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -246,6 +271,13 @@
       <DependentUpon>RemoveCartItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Secrecy.cs" />
+    <Compile Include="SelectProduct.aspx.cs">
+      <DependentUpon>SelectProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectProduct.aspx.designer.cs">
+      <DependentUpon>SelectProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ShoppingCart.cs" />
     <Compile Include="Single.aspx.cs">
       <DependentUpon>Single.aspx</DependentUpon>

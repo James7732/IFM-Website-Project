@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div id="container" class="c-container">
         <div class="left-col" id="left-col">
             <div id="left-slider"></div>
@@ -23,8 +24,7 @@
             <div class="page">
                 <section>
                     <header>
-                        <h2 class="section-title">New Products</h2>
-                        <a href="#" class="all">Show All</a>
+                        <h2 class="section-title">Featured</h2>
                     </header>
 
                     <div class="product-list">
@@ -41,7 +41,6 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                         <div class="product">
                             <div class="inner-product">
@@ -56,7 +55,6 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                         <div class="product">
                             <div class="inner-product">
@@ -71,7 +69,6 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                         <div class="product">
                             <div class="inner-product">
@@ -86,13 +83,12 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                     </div>
-                    <!-- .product-list -->
 
                 </section>
 
+                <!--
                 <section>
                     <header>
                         <h2 class="section-title">Promotion</h2>
@@ -114,7 +110,6 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
 
                         <div class="product">
@@ -130,7 +125,6 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
 
                         <div class="product">
@@ -146,7 +140,6 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
 
                         <div class="product">
@@ -162,15 +155,13 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
-                        <!-- .product -->
 
                     </div>
-                    <!-- .product-list -->
 
                 </section>
+                    -->
+
             </div>
         </div>
-        <!-- .container -->
     </main>
-    <!-- .main-content -->
 </asp:Content>

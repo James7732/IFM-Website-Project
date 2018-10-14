@@ -7,18 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AlchemyGames {
+namespace AlchemyGamesv2._0 {
     
     
-    public partial class Contact {
+    public partial class SelectProduct {
         
         /// <summary>
-        /// contactus control.
+        /// productlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactus;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl productlist;
     }
 }
