@@ -6,6 +6,15 @@ namespace AlchemyGamesv2._0
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(ShoppingCart.getNumItems() > 0)
+            {
+                cart.InnerHtml = "<i class=\"icon-cart\"></i> " + ShoppingCart.getNumItems() + " items in Cart";
+            }
+            else
+            {
+                cart.InnerHtml = "<i class=\"icon-cart\"></i> 0 items in Cart";
+            }
+
             if (Session["Admin"] != null)
             {
                 if (!(bool)Session["Admin"])

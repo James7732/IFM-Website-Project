@@ -42,6 +42,7 @@ namespace AlchemyGamesv2._0
             var prodID = Request.QueryString["ID"];
             int val = Convert.ToInt32(prodQuant.Value);
             ShoppingCart.addItem(Convert.ToInt32(prodID), val);
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }

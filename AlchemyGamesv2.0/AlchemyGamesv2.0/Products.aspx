@@ -7,7 +7,6 @@
         <div class="container">
             <div class="page">
                 <div class="filter-bar">
-                    <h1 id="errmsg" runat="server"></h1>
 							<div class="filter">
 								<span>
 									<label>Sort by:</label>
@@ -45,9 +44,10 @@
 								<a href="#" class="page-number">12</a>
 								<a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
 							</div>
+                    </div>
 
                 <div id="prodList" runat="server" class="product-list">
-                   <h1 id="testMsg" runat="server"></h1>
+                   
 
                 </div>
 
