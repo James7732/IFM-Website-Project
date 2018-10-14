@@ -45,6 +45,7 @@
 								<a href="#" class="page-number">12</a>
 								<a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
 							</div>
+                           </div>
 
                 <div id="prodList" runat="server" class="product-list">
                    <h1 id="testMsg" runat="server"></h1>

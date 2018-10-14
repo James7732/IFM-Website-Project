@@ -27,7 +27,10 @@
                         <h2 class="section-title">Featured</h2>
                     </header>
 
+
                     <div class="product-list">
+
+                        <!--
                         <div class="product">
                             <div class="inner-product">
                                 <div class="figure-image">
@@ -83,6 +86,7 @@
                                 <a href="Single.aspx" class="button muted">Read Details</a>
                             </div>
                         </div>
+                        -->
 
                     </div>
 
