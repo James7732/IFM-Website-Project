@@ -49,7 +49,8 @@ namespace AlchemyGamesv2._0
                         Surname = SurName,
                         Phone = Cell,
                         Password = PassWord,
-                        Admin = false
+                        Admin = false,
+                        DateRegistered = DateTime.Now.Date
                     };
 
                     try
