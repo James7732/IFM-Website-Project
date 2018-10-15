@@ -150,7 +150,6 @@
     <Content Include="js\app.js" />
     <Content Include="js\bannerslider.js" />
     <Content Include="HomePage.aspx" />
-    <Content Include="Create Database.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ProductAddition.aspx" />
     <Content Include="ProductDeletion.aspx" />
@@ -225,13 +224,6 @@
     </Compile>
     <Compile Include="HomePage.aspx.designer.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Create Database.aspx.cs">
-      <DependentUpon>Create Database.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Create Database.aspx.designer.cs">
-      <DependentUpon>Create Database.aspx</DependentUpon>
     </Compile>
     <Compile Include="InvoiceList.aspx.cs">
       <DependentUpon>InvoiceList.aspx</DependentUpon>

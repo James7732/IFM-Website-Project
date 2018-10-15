@@ -9,8 +9,9 @@
     </div>
 
 <div id="Invoices" runat="server" class="tabcontent">
-  <h3>Invoices</h3>
-  <p>List of user's invoices here</p>
+            <div class="product-list" id="invList" runat="server">
+                
+            </div>
 </div>
 
 <div id="UserInfo" runat="server" class="tabcontent">
