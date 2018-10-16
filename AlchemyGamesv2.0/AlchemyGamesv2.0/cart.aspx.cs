@@ -42,14 +42,14 @@ namespace AlchemyGamesv2._0
                 display.Append("</td>" + Environment.NewLine);
                 display.Append("<td class=\"product-price\">" + String.Format("{0:C2}", prod.Price) + "</td>" + Environment.NewLine);
                 display.Append("<td class=\"product-qty\">" + Environment.NewLine);
-                if(ShoppingCart.getNumProd(prod.Id) != 0)
+                if(ShoppingCart.getNumProd(prod.Id) > 0)
                 {
                     display.Append("<a href=\"removeItem.aspx?ID=" + prod.Id + "\" class=\"button\">-</a>" + Environment.NewLine);
                 }
                 display.Append("<select name=\"#\" id=\""+ prod.Name +"Count\" runat=\"server\">" + Environment.NewLine);
-                display.Append("<option value=\"" + ShoppingCart.getNumItems() +"\">"+ ShoppingCart.getNumItems() +"</option> " + Environment.NewLine);
+                display.Append("<option value=\"" + ShoppingCart.getNumProd(prod.Id) +"\">"+ ShoppingCart.getNumProd(prod.Id) +"</option> " + Environment.NewLine);
                 display.Append("</select>" + Environment.NewLine);
-                if(ShoppingCart.getNumProd(prod.Id) != 3)
+                if(ShoppingCart.getNumProd(prod.Id) <= 2)
                 {
                     display.Append("<a href=\"addItem.aspx?ID=" + prod.Id + "\" class=\"button\">+</a>" + Environment.NewLine);
                 }
