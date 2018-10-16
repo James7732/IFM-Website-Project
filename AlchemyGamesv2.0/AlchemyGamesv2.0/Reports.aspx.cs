@@ -20,6 +20,7 @@ namespace AlchemyGamesv2._0
         {
             if(!IsPostBack)
             {
+                //MostCopiesSold();
                 RegisteredUsers();
                 ProductsSold();
             }
@@ -47,6 +48,65 @@ namespace AlchemyGamesv2._0
 
             GridViewRegistered.DataSource = reader;
             GridViewRegistered.DataBind();
+        }
+
+        private void MostCopiesSold()
+        {
+            var db = new AlchemyLinkDataContext();
+            List<int> mostGames = new List<int>();
+
+            dynamic copies = from o in db.Order_Products
+                             select o;
+
+            foreach(Order_Product order in copies)
+            {
+                mostGames.Add(order.ProductID);
+            }
+
+            int most = mostGames.GroupBy(i => i).OrderByDescending(grp => grp.Count()).Select(grp => grp.Key).First();
+
+            Product p = (from prod in db.Products
+                         where prod.Id.Equals(most)
+                         select prod).FirstOrDefault();
+
+            //p contains the product that sold the most copies. The most baught game...
+        }
+
+        private void TotalSoldPerGame()
+        {
+            var db = new AlchemyLinkDataContext();
+            List<int> gamesSold = new List<int>();
+            List<int> listOfUniqueGames = new List<int>();
+            List<GameCount> totalPerGame = new List<GameCount>();
+
+            dynamic copies = from o in db.Order_Products
+                             select o;
+
+            foreach(Order_Product order in copies)
+            {
+                gamesSold.Add(order.ProductID);
+            }
+
+            listOfUniqueGames = gamesSold.Distinct().ToList();
+
+            for(int i = 0; i < listOfUniqueGames.Count; i++)
+            {
+                int count = 0;
+                foreach(int id in gamesSold)
+                {
+                    if (id.Equals(listOfUniqueGames.ElementAt(i)))
+                    {
+                        count++;
+                    }
+                }
+
+                GameCount game = new GameCount();
+                game.setGameCount(count);
+                game.setGameID(listOfUniqueGames.ElementAt(i));
+                totalPerGame.Add(game);
+            }
+
+            //totalPerGame now has the total copies sold per game with its corrosponding game ID
         }
 
         private void ProductsSold()

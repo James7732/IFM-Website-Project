@@ -21,12 +21,12 @@
                             <div class="addtocart-bar">
                                     <label for="#">Quantity</label>
                                     <select id="prodQuant" runat="server" name="prodQuant">
-                                        <option value="1">1</option>
+                                        <%--<option value="1">1</option>
                                         <option value="2">2</option>
-                                        <option value="3">3</option>
+                                        <option value="3">3</option>--%>
                                     </select>
                                 <asp:Button ID="btnAddToCart" runat="server" OnClick="AddToCart_Click" Text="Add To Cart" CssClass="button"/>
-
+                                <p style="color: red" id="cartMsg" runat="server"></p>
                             </div>
                         </div>
                     </div>

@@ -19,6 +19,21 @@ namespace AlchemyGamesv2._0
                            where g.Id.Equals(Request.QueryString["ID"])
                            select g).FirstOrDefault();
 
+            string productQuantity = "";
+            int quantity = Convert.ToInt32(game.StockLevels);
+
+            if(quantity > 3)
+            {
+                quantity = 3;
+            }
+
+            for(int i = 1; i <= quantity; i++)
+            {
+                productQuantity += "<option value="+ i +">"+ i +"</option>" + Environment.NewLine;
+            }
+
+            //prodQuant.InnerHtml = productQuantity;
+
             display = "<div class=\"col-sm-6 col-md-4\">" + Environment.NewLine;
             display += "<div class=\"product-images\">" + Environment.NewLine;
             display += "<figure class=\"large-image\">" + Environment.NewLine;
@@ -39,10 +54,31 @@ namespace AlchemyGamesv2._0
 
         protected void AddToCart_Click(object sender, EventArgs e)
         {
+            List<int> items = ShoppingCart.getCartItems();
             var prodID = Request.QueryString["ID"];
             int val = Convert.ToInt32(prodQuant.Value);
-            ShoppingCart.addItem(Convert.ToInt32(prodID), val);
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+
+            if (items != null)
+            {
+                int count = 0;
+                for(int i = 0; i < items.Count; i++)
+                {
+                    if (items.ElementAt(i).Equals(prodID))
+                    {
+                        count++;
+                    }
+                }
+
+                if((count + val) > 3)
+                {
+                    cartMsg.InnerHtml = "You may not buy more than 3 of the same games at a time";
+                }
+                else
+                {
+                    ShoppingCart.addItem(Convert.ToInt32(prodID), val);
+                    Page.Response.Redirect(Page.Request.Url.ToString(), true);
+                }
+            }
         }
     }
 }
