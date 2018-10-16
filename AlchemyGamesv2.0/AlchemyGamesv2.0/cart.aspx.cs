@@ -35,9 +35,17 @@ namespace AlchemyGamesv2._0
                 display.Append("</td>" + Environment.NewLine);
                 display.Append("<td class=\"product-price\">" + String.Format("{0:C2}", prod.Price) + "</td>" + Environment.NewLine);
                 display.Append("<td class=\"product-qty\">" + Environment.NewLine);
-                display.Append("<select name=\"#\">" + Environment.NewLine);
-                display.Append("<option value=\""+ ShoppingCart.getNumItems() +"\">"+ ShoppingCart.getNumItems() +"</option> " + Environment.NewLine);
+                if(ShoppingCart.getNumProd(prod.Id) != 0)
+                {
+                    display.Append("<a href=\"removeItem.aspx?ID=" + prod.Id + "\" class=\"button\">-</a>" + Environment.NewLine);
+                }
+                display.Append("<select name=\"#\" id=\""+ prod.Name +"Count\" runat=\"server\">" + Environment.NewLine);
+                display.Append("<option value=\"" + ShoppingCart.getNumItems() +"\">"+ ShoppingCart.getNumItems() +"</option> " + Environment.NewLine);
                 display.Append("</select>" + Environment.NewLine);
+                if(ShoppingCart.getNumProd(prod.Id) != 3)
+                {
+                    display.Append("<a href=\"addItem.aspx?ID=" + prod.Id + "\" class=\"button\">+</a>" + Environment.NewLine);
+                }
                 display.Append("</td" + Environment.NewLine);
                 display.Append("<td class=\"product-total\">R" + prod.Price*ShoppingCart.getNumProd(prod.Id) +"</td>" + Environment.NewLine);
                 display.Append("<td class=\"action\"><a href=\"RemoveCartItem.aspx?ID="+ prod.Id +"\"><i class=\"fa fa-times\"></i></a></td>" + Environment.NewLine);
@@ -65,12 +73,14 @@ namespace AlchemyGamesv2._0
             Total = subtotal + 50.0;
 
             subTotal.InnerHtml = "<strong> Subtotal:</strong> R"+ subtotal +"";
-            total.InnerHtml = "<strong>Total</strong><span class=\"num\">R"+ Total +"</span><strong>Total</strong><span class=\"num\">R"+ Total +"";
+            total.InnerHtml = "<strong>Total</strong><span class=\"num\">R"+ Total +"";
         }
 
         protected void BtnCheckout_Click(object sender, EventArgs e)
         {
             var db = new AlchemyLinkDataContext();
+
+
 
             if(Session["Admin"] != null)
             {
@@ -78,7 +88,7 @@ namespace AlchemyGamesv2._0
             }
             else
             {
-                Response.Redirect("Login.aspx?ID=checkout");
+                Response.Redirect("Login.aspx");
             }
         }
     }

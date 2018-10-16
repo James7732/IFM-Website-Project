@@ -12,6 +12,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <p id="mostSold" runat="server" style="color: red"></p>
             <asp:GridView ID="GridViewSold" runat="server">
             </asp:GridView>
 

@@ -5,10 +5,6 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
-using iText.Layout;
-using iText.Kernel.Pdf;
-using iText.Layout.Element;
-using System.IO;
 
 namespace AlchemyGamesv2._0
 {
@@ -23,16 +19,16 @@ namespace AlchemyGamesv2._0
                          where u.Id.Equals(Convert.ToInt32(Session["UserID"]))
                          select u).FirstOrDefault();
 
-            display = "<font size=6>Review Order</font>" + "<br/><br/>";
-            display += "Username: " + user.Username + "<br/><br/>";
+            display = "Review products" + "<br/>";
+            display += "Usernam: " + user.Username + "<br/>";
             foreach(int id in ShoppingCart.getCartItems())
             {
                 Product prod = (from p in db.Products
                                where p.Id.Equals(id)
                                select p).FirstOrDefault();
 
-                display += "Products Name: " + prod.Name + "<br/>";
-                display += "Price: " + String.Format("{0:C2}", prod.Price) + "<br/><br/>";
+                display += "Products name: " + prod.Name + "<br/>";
+                display += "Price: " + prod.Price + "<br/>";
             }
             cartDetails.InnerHtml = display;
         }
@@ -76,26 +72,11 @@ namespace AlchemyGamesv2._0
                 db.SubmitChanges();
             }
 
-            //cartDetails.InnerHtml = "<h1 style=\"color: red\">Check Out Successful, Invoice Saved to Desktop, Redirecting to Home...</h1>";
-
-            try
-            {
-                var exportfolder = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                var exportfile = Path.Combine(exportfolder, "Invoice.pdf");
-                var writer = new PdfWriter(exportfile);
-                var pdf = new PdfDocument(writer);
-                var document = new Document(pdf);
-                document.Add(new Paragraph("Alchemy Games"));
-                document.Close();
-
-                Response.Redirect("Pdf.aspx");
-            }
-            catch
-            {
-            }
-            
             ShoppingCart.removeAll();
 
+            cartDetails.InnerHtml = "<h1 style=\"color: red\">Items checked out</h1>";
+            btnCheckout.Visible = false;
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }

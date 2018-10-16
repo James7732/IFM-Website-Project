@@ -18,6 +18,7 @@
                         </tr>
                     </thead>
                     <tbody id="cartDisplay" runat="server">
+                        
                         <%--<tr>
                             <td class="product-name">
                                 <div class="product-thumbnail">

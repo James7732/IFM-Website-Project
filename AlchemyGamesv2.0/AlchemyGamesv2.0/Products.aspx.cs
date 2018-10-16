@@ -8,13 +8,6 @@ using System.Web.UI.WebControls;
 
 namespace AlchemyGamesv2._0
 {
-    //<a href = "#" class="page-number"><i class="fa fa-angle-left"></i></a>
-	//<span class="page-number current">1</span>
-	//<a href = "#" class="page-number">2</a>
-	//<a href = "#" class="page-number">3</a>
-	//<a href = "#" class="page-number">...</a>
-	//<a href = "#" class="page-number">12</a>
-	//<a href = "#" class="page-number"><i class="fa fa-angle-right"></i></a>
     public partial class Products : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +16,6 @@ namespace AlchemyGamesv2._0
             var gametype = gameType.Value;
             var sortby = SortBy.Value;
             var genre = GameGenre.Value;
-            //var numgames = NumGames.Value;
 
             switch (pageType)
             {
@@ -115,10 +107,10 @@ namespace AlchemyGamesv2._0
                                     display.Append("</div>" + Environment.NewLine);
                                 }
                             }
-                            else
-                            {
-                                rejectGames.Add(prod.Id);
-                            }
+                            //else
+                            //{
+                            //    rejectGames.Add(prod.Id);
+                            //}
                         }
                     }
 
@@ -223,10 +215,10 @@ namespace AlchemyGamesv2._0
                                     display.Append("</div>" + Environment.NewLine);
                                 }
                             }
-                            else
-                            {
-                                rejectGames.Add(prod.Id);
-                            }
+                            //else
+                            //{
+                            //    rejectGames.Add(prod.Id);
+                            //}
                         }
                     }
 
