@@ -26,7 +26,7 @@ namespace AlchemyGamesv2._0
                 display.Append("<tr>" + Environment.NewLine);
                 display.Append("<td class=\"product-name\">" + Environment.NewLine);
                 display.Append("<div class=\"product-thumbnail\">" + Environment.NewLine);
-                display.Append("<img src=\"" + prod.ImageLink +"\" />" + Environment.NewLine);
+                display.Append("<img src=\"" + prod.ImageThumbLink +"\" />" + Environment.NewLine);
                 display.Append("</div>" + Environment.NewLine);
                 display.Append("<div class=\"product-detail\">" + Environment.NewLine);
                 display.Append("<h3 class=\"product-title\">" + prod.Name +"</h3>" + Environment.NewLine);
