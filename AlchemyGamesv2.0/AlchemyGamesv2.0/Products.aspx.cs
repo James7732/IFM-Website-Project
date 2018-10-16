@@ -23,7 +23,7 @@ namespace AlchemyGamesv2._0
             var gametype = gameType.Value;
             var sortby = SortBy.Value;
             var genre = GameGenre.Value;
-            var numgames = NumGames.Value;
+            //var numgames = NumGames.Value;
 
             switch (pageType)
             {
@@ -65,8 +65,10 @@ namespace AlchemyGamesv2._0
 
             for(int i = 0; i < popGames.Count; i++)
             {
-                popGameRating.ElementAt(i).setGameID(popGames.ElementAt(i));
-                popGameRating.ElementAt(i).setGameCount(0);
+                GameCount newGame = new GameCount();
+                newGame.setGameID(popGames.ElementAt(i));
+                newGame.setGameCount(0);
+                popGameRating.Add(newGame);
             }
 
             for (int i = 0; i < popGameRating.Count; i++)
@@ -86,48 +88,214 @@ namespace AlchemyGamesv2._0
 
             if (genre.Equals("none"))
             {
-
-                foreach (Product prod in games)
+                if (sortby.Equals("Pop"))
                 {
-                    if (prod.StockLevels > 0)
+                    for(int i = 0; i < popGameRating.Count; i++)
                     {
-                        display.Append("<div class=\"product\">" + Environment.NewLine);
-                        display.Append("<div class=\"inner-product\">" + Environment.NewLine);
-                        display.Append("<div class=\"figure-image\">" + Environment.NewLine);
-                        display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
-                        display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
-                        display.Append("</div>" + Environment.NewLine);
-                        display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
-                        display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
-                        display.Append("<br />");
-                        display.Append("</div>" + Environment.NewLine);
-                        display.Append("</div>" + Environment.NewLine);
+                        Product prodR = popGameRating.ElementAt(i).GetProduct();
+
+                        foreach (Product prod in games)
+                        {
+                            if (prodR.Id.Equals(prod.Id))
+                            {
+                                if (prod.StockLevels > 0)
+                                {
+                                    display.Append("<div class=\"product\">" + Environment.NewLine);
+                                    display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                                    display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                                    display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                                    display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                                    display.Append("</div>" + Environment.NewLine);
+                                    display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                                    display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                                    display.Append("<br />");
+                                    display.Append("</div>" + Environment.NewLine);
+                                    display.Append("</div>" + Environment.NewLine);
+                                }
+                            }
+                        }
                     }
+                    prodList.InnerHtml = display.ToString();
+                    display.Clear();
                 }
-                prodList.InnerHtml = display.ToString();
-                display.Clear();
+                else if(sortby.Equals("High"))
+                {
+                    dynamic game = from g in db.Products
+                                    where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
+                                    orderby g.Price descending
+                                    select g;
+
+                    foreach (Product prod in game)
+                    {
+                        if (prod.StockLevels > 0)
+                        {
+                            display.Append("<div class=\"product\">" + Environment.NewLine);
+                            display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                            display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                            display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                            display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                            display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                            display.Append("<br />");
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                        }
+                    }
+                    prodList.InnerHtml = display.ToString();
+                    display.Clear();
+                } else if (SortBy.Equals("Low"))
+                {
+                    dynamic game = from g in db.Products
+                                   where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
+                                   orderby g.Price ascending
+                                   select g;
+
+                    foreach (Product prod in game)
+                    {
+                        if (prod.StockLevels > 0)
+                        {
+                            display.Append("<div class=\"product\">" + Environment.NewLine);
+                            display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                            display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                            display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                            display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                            display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                            display.Append("<br />");
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                        }
+                    }
+                    prodList.InnerHtml = display.ToString();
+                    display.Clear();
+                }
+                //foreach (Product prod in games)
+                //{
+                //    if (prod.StockLevels > 0)
+                //    {
+                //        display.Append("<div class=\"product\">" + Environment.NewLine);
+                //        display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                //        display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                //        display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                //        display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                //        display.Append("</div>" + Environment.NewLine);
+                //        display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                //        display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                //        display.Append("<br />");
+                //        display.Append("</div>" + Environment.NewLine);
+                //        display.Append("</div>" + Environment.NewLine);
+                //    }
+                //}
+                //prodList.InnerHtml = display.ToString();
+                //display.Clear();
             }
             else
             {
-                foreach (Product prod in games)
+                if (SortBy.Equals("Pop"))
                 {
-                    if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
+                    for (int i = 0; i < popGameRating.Count; i++)
                     {
-                        display.Append("<div class=\"product\">" + Environment.NewLine);
-                        display.Append("<div class=\"inner-product\">" + Environment.NewLine);
-                        display.Append("<div class=\"figure-image\">" + Environment.NewLine);
-                        display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
-                        display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
-                        display.Append("</div>" + Environment.NewLine);
-                        display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
-                        display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
-                        display.Append("<br />");
-                        display.Append("</div>" + Environment.NewLine);
-                        display.Append("</div>" + Environment.NewLine);
+                        Product prodR = popGameRating.ElementAt(i).GetProduct();
+
+                        foreach (Product prod in games)
+                        {
+                            if (prodR.Id.Equals(prod.Id))
+                            {
+                                if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
+                                {
+                                    display.Append("<div class=\"product\">" + Environment.NewLine);
+                                    display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                                    display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                                    display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                                    display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                                    display.Append("</div>" + Environment.NewLine);
+                                    display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                                    display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                                    display.Append("<br />");
+                                    display.Append("</div>" + Environment.NewLine);
+                                    display.Append("</div>" + Environment.NewLine);
+                                }
+                            }
+                        }
                     }
+                    prodList.InnerHtml = display.ToString();
+                    display.Clear();
                 }
-                prodList.InnerHtml = display.ToString();
-                display.Clear();
+                else if (sortby.Equals("High"))
+                {
+                    dynamic game = from g in db.Products
+                                   where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
+                                   orderby g.Price descending
+                                   select g;
+
+                    foreach (Product prod in game)
+                    {
+                        if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
+                        {
+                            display.Append("<div class=\"product\">" + Environment.NewLine);
+                            display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                            display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                            display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                            display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                            display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                            display.Append("<br />");
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                        }
+                    }
+                    prodList.InnerHtml = display.ToString();
+                    display.Clear();
+                }
+                else if (SortBy.Equals("Low"))
+                {
+                    dynamic game = from g in db.Products
+                                   where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
+                                   orderby g.Price ascending
+                                   select g;
+
+                    foreach (Product prod in game)
+                    {
+                        if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
+                        {
+                            display.Append("<div class=\"product\">" + Environment.NewLine);
+                            display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                            display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                            display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                            display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                            display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                            display.Append("<br />");
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                        }
+                    }
+                    prodList.InnerHtml = display.ToString();
+                    display.Clear();
+                }
+                //foreach (Product prod in games)
+                //{
+                //    if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
+                //    {
+                //        display.Append("<div class=\"product\">" + Environment.NewLine);
+                //        display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                //        display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                //        display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                //        display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                //        display.Append("</div>" + Environment.NewLine);
+                //        display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                //        display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                //        display.Append("<br />");
+                //        display.Append("</div>" + Environment.NewLine);
+                //        display.Append("</div>" + Environment.NewLine);
+                //    }
+                //}
+                //prodList.InnerHtml = display.ToString();
+                //display.Clear();
             }
         }
     }

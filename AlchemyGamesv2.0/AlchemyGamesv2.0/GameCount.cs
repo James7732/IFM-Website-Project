@@ -9,6 +9,15 @@ namespace AlchemyGamesv2._0
     {
         private int gameID;
         private int gameCount;
+        
+        public Product GetProduct()
+        {
+            var db = new AlchemyLinkDataContext();
+            var prod = (from p in db.Products
+                        where p.Id.Equals(gameID)
+                        select p).FirstOrDefault();
+            return prod;
+        }
 
         public int getGameID()
         {

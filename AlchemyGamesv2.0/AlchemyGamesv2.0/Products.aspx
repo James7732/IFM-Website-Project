@@ -40,20 +40,20 @@
 										<option value="Strategy">Strategy</option>
 									</select>
 								</span>
-								<span>
+								<%--<span>
 									<label>Show:</label>
 									<select id="NumGames" runat="server">
 										<option value="8">8</option>
 										<option value="16">16</option>
 										<option value="24">24</option>
 									</select>
-								</span>
+								</span>--%>
                                 <asp:Button ID="btnFilter" runat="server" Text="Filter" OnClick="Page_Load" />
 							</div>
 
-							<div class="pagination" id="pageNumsTop" runat="server">
+							<%--<div class="pagination" id="pageNumsTop" runat="server">
 								
-							</div>
+							</div>--%>
                            </div>
 
                 <div id="prodList" runat="server" class="product-list">
@@ -61,17 +61,17 @@
 
                 </div>
 
-                <div class="pagination-bar">
+                <%--<div class="pagination-bar">
                     <div class="pagination" id="pageNumsBtm" runat="server">
-                        <%--<a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
+                        <a href="#" class="page-number"><i class="fa fa-angle-left"></i></a>
                         <span class="page-number current">1</span>
                         <a href="#" class="page-number">2</a>
                         <a href="#" class="page-number">3</a>
                         <a href="#" class="page-number">...</a>
                         <a href="#" class="page-number">12</a>
-                        <a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>--%>
+                        <a href="#" class="page-number"><i class="fa fa-angle-right"></i></a>
                     </div>
-                </div>
+                </div>--%>
             </div>
         </div>
     </main>
