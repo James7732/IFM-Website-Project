@@ -42,6 +42,7 @@ namespace AlchemyGamesv2._0
             }
 
             StringBuilder display = new StringBuilder();
+            display.Clear();
 
             var db = new AlchemyLinkDataContext();
 
@@ -115,8 +116,6 @@ namespace AlchemyGamesv2._0
                             }
                         }
                     }
-                    prodList.InnerHtml = display.ToString();
-                    display.Clear();
                 }
                 else if(sortby.Equals("High"))
                 {
@@ -142,8 +141,8 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    prodList.InnerHtml = display.ToString();
-                    display.Clear();
+                    //prodList.InnerHtml = display.ToString();
+                    //display.Clear();
                 } else if (SortBy.Equals("Low"))
                 {
                     dynamic game = from g in db.Products
@@ -168,28 +167,9 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    prodList.InnerHtml = display.ToString();
-                    display.Clear();
+                    //prodList.InnerHtml = display.ToString();
+                    //display.Clear();
                 }
-                //foreach (Product prod in games)
-                //{
-                //    if (prod.StockLevels > 0)
-                //    {
-                //        display.Append("<div class=\"product\">" + Environment.NewLine);
-                //        display.Append("<div class=\"inner-product\">" + Environment.NewLine);
-                //        display.Append("<div class=\"figure-image\">" + Environment.NewLine);
-                //        display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
-                //        display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
-                //        display.Append("</div>" + Environment.NewLine);
-                //        display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
-                //        display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
-                //        display.Append("<br />");
-                //        display.Append("</div>" + Environment.NewLine);
-                //        display.Append("</div>" + Environment.NewLine);
-                //    }
-                //}
-                //prodList.InnerHtml = display.ToString();
-                //display.Clear();
             }
             else
             {
@@ -220,8 +200,8 @@ namespace AlchemyGamesv2._0
                             }
                         }
                     }
-                    prodList.InnerHtml = display.ToString();
-                    display.Clear();
+                    //prodList.InnerHtml = display.ToString();
+                    //display.Clear();
                 }
                 else if (sortby.Equals("High"))
                 {
@@ -247,8 +227,8 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    prodList.InnerHtml = display.ToString();
-                    display.Clear();
+                    //prodList.InnerHtml = display.ToString();
+                    //display.Clear();
                 }
                 else if (SortBy.Equals("Low"))
                 {
@@ -274,29 +254,12 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    prodList.InnerHtml = display.ToString();
-                    display.Clear();
+                    //prodList.InnerHtml = display.ToString();
+                    //display.Clear();
                 }
-                //foreach (Product prod in games)
-                //{
-                //    if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
-                //    {
-                //        display.Append("<div class=\"product\">" + Environment.NewLine);
-                //        display.Append("<div class=\"inner-product\">" + Environment.NewLine);
-                //        display.Append("<div class=\"figure-image\">" + Environment.NewLine);
-                //        display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
-                //        display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
-                //        display.Append("</div>" + Environment.NewLine);
-                //        display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
-                //        display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
-                //        display.Append("<br />");
-                //        display.Append("</div>" + Environment.NewLine);
-                //        display.Append("</div>" + Environment.NewLine);
-                //    }
-                //}
-                //prodList.InnerHtml = display.ToString();
-                //display.Clear();
             }
+            prodList.InnerHtml = display.ToString();
+            display.Clear();
         }
     }
 }
