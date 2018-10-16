@@ -23,7 +23,7 @@ namespace AlchemyGamesv2._0
             display += "<div class=\"product-images\">" + Environment.NewLine;
             display += "<figure class=\"large-image\">" + Environment.NewLine;
             display += "<a href=\"" + game.ImageLink + "\" >" + Environment.NewLine;
-            display += "<img src=\"" + game.ImageLink + "\"/></a>" + Environment.NewLine;
+            display += "<img src=\"" + game.ImageFullLink + "\"/></a>" + Environment.NewLine;
             display += "</figure>" + Environment.NewLine;
             display += "</div>" + Environment.NewLine;
             display += "</div>" + Environment.NewLine;
