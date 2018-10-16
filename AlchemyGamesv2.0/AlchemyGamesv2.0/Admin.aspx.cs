@@ -23,6 +23,63 @@ namespace AlchemyGamesv2._0
                 RegisteredUsers();
                 ProductsSold();
             }
+
+            var database = new AlchemyLinkDataContext();
+
+            dynamic game = from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g;
+
+            foreach (Product p in game)
+            {
+                actualname.InnerHtml = "<font size=5> Name: " + p.Name + "</font>";
+                actualprice.InnerHtml = "<font size=5> Price: " + String.Format("{0:C2}", p.Price) + "</font>";
+                actualdescription.InnerHtml = "<font size=5> Description: " + p.Description + "</font>";
+                actualimage.InnerHtml = "<img src=" + p.ImageLink + ">";
+                actualstock.InnerHtml = "<font size=5> Stock: " + p.StockLevels + "</font>";
+                actualplatform.InnerHtml = "<font size=5> Platform: " + p.Platfrom + "</font>";
+                actualtype.InnerHtml = "<font size=5> Type: " + p.Type + "</font>";
+                actualgenre.InnerHtml = "<font size=5> Genre: " + p.Genre + "</font>";
+            }
+
+            //var database = new AlchemyLinkDataContext();
+
+            dynamic games = from g in database.Products select g;
+
+            string display = " ";
+
+            foreach (Product p in games)
+            {
+                display += p.Id + " " + p.Name + " " + p.Platfrom;
+                display += "<br />";
+            }
+
+            productlist.InnerHtml = display;
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            int id = Convert.ToInt32(productid.Value);
+
+            var product = from p in database.Products where p.Id.Equals(id) select p;
+
+            foreach (var p in product)
+            {
+                database.Products.DeleteOnSubmit(p);
+            }
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect("ProductDeletion.aspx");
+
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+
         }
 
         protected void btnMonth_Click(object sender, EventArgs e)
@@ -61,6 +118,198 @@ namespace AlchemyGamesv2._0
             deleteProd.Visible = false;
             report.Visible = true;
         }
+
+        //======================================================
+        protected void btnName_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.Name = newname.Value;
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnPrice_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.Price = Convert.ToInt32(newprice.Value);
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnDes_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.Description = newdescription.Value;
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnImage_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.ImageLink = newimage.Value;
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnStock_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.StockLevels = Convert.ToInt32(newstock.Value);
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnPlatform_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.Platfrom = newplatform.Value;
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnType_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.Type = newtype.Value;
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+
+        protected void btnGenre_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            Product game = (from g in database.Products where g.Id.Equals(Request.QueryString["Id"]) select g).SingleOrDefault();
+
+            game.Genre = newgenre.Value;
+
+            try
+            {
+                database.SubmitChanges();
+                Response.Redirect(Request.RawUrl);
+
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+            }
+        }
+        //======================================================
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            var database = new AlchemyLinkDataContext();
+
+            var NewProduct = new Product
+            {
+                Name = productname.Value,
+                Price = Convert.ToDecimal(productprice.Value),
+                Description = productdescription.Value,
+                ImageLink = productimage.Value,
+                StockLevels = Convert.ToInt32(productstock.Value),
+                Platfrom = productplatform.Value,
+                Type = producttype.Value,
+                Genre = productgenre.Value
+
+            };
+
+            try
+            {
+                database.Products.InsertOnSubmit(NewProduct);
+                database.SubmitChanges();
+                Response.Redirect("ProductAddition.aspx");
+            }
+            catch (Exception e1)
+            {
+                Console.WriteLine(e1);
+
+            }
+        }
+        //======================================================
 
         private void RegisteredUsers()
         {
