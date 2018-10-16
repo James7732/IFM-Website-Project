@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -23,6 +24,11 @@ namespace AlchemyGamesv2._0
                 ProductsSold();
             }
 
+        }
+
+        protected void btnMonth_Click(object sender, EventArgs e)
+        {
+            SalesPerMonth();
         }
 
         private void RegisteredUsers()
@@ -59,6 +65,45 @@ namespace AlchemyGamesv2._0
 
             GridViewSold.DataSource = reader;
             GridViewSold.DataBind();
+        }
+
+        private void SalesPerMonth()
+        {
+            int month = Convert.ToInt32(salesmonth.Value);
+
+            var database = new AlchemyLinkDataContext();
+
+            dynamic sales = from s in database.Orders where s.Date.Month.Equals(month) select s;
+
+            double total = 0;
+
+            foreach (Order o in sales)
+            {
+                total += o.Amount;
+            }
+
+            salespermonth.InnerHtml = "R" + Convert.ToString(total);
+        }
+
+        private void BusiestDay()
+        {
+            var database = new AlchemyLinkDataContext();
+
+            dynamic date = from d in database.Orders where d.Date.Month.Equals(10) select d;
+
+            ArrayList dates = new ArrayList();
+
+            foreach(Order o in date)
+            {
+                dates.Add(o.Date.Date);
+            }
+
+            dates.Sort();
+
+            foreach(int i in dates)
+            {
+
+            }
         }
     }
 }
