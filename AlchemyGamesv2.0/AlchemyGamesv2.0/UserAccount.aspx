@@ -2,21 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div style="background-color: ivory">
+<div class="container">
+    <br />
     <div class="tab">
+        <br />
         <asp:Button ID="BtnInvoice" runat="server" Text="Invoices" CssClass="tabButton" OnClick="BtnInvoice_Click" />
+        <br />
+        <br />
         <asp:Button ID="BtnUserInfo" runat="server" Text="User Info" CssClass="tabButton" OnClick="BtnUserInfo_Click" />
     </div>
 
 <div id="Invoices" runat="server" class="tabcontent">
+    <br />
             <div class="product-list" id="invList" runat="server">
                 
             </div>
 </div>
 
 <div id="UserInfo" runat="server" class="tabcontent">
-  <h3>User Info</h3>
-  <p>User's info here</p>
     <div id="infoDisplay" runat="server">
         <div class="container">
         <h1 class="section-title"> Current Account Details</h1>
@@ -56,10 +59,11 @@
         <button id="btnChange" type="submit" onserverclick="Change_Click" runat="server">
 		 Submit Details
 		</button>
-        <br>
+        <br />
         <div id="changeMsg" runat="server">   </div>
      </div>
     </div>
 </div>
 </div>
+    <br />
 </asp:Content>
