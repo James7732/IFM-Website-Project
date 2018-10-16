@@ -20,11 +20,17 @@
 
                             <div class="addtocart-bar">
                                     <label for="#">Quantity</label>
-                                    <select id="prodQuant" runat="server" name="prodQuant">
-                                        <%--<option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>--%>
-                                    </select>
+                                    <%--<select id="prodQuant" runat="server" name="prodQuant">
+                                        <option value="1" id="valOne" runat="server">1</option>
+                                        <option value="2" id="valTwo" runat="server">2</option>
+                                        <option value="3" id="valThree" runat="server">3</option>
+                                    </select>--%>
+                                <asp:DropDownList ID="DropDownList1" runat="server">
+                                    <asp:ListItem Text="1" Value="1"></asp:ListItem>
+                                    <asp:ListItem Text="2" Value="2"></asp:ListItem>
+                                    <asp:ListItem Text="3" Value="3"></asp:ListItem>
+                                </asp:DropDownList>
+
                                 <asp:Button ID="btnAddToCart" runat="server" OnClick="AddToCart_Click" Text="Add To Cart" CssClass="button"/>
                                 <p style="color: red" id="cartMsg" runat="server"></p>
                             </div>

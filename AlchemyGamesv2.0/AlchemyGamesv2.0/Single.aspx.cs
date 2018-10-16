@@ -19,7 +19,6 @@ namespace AlchemyGamesv2._0
                            where g.Id.Equals(Request.QueryString["ID"])
                            select g).FirstOrDefault();
 
-            string productQuantity = "";
             int quantity = Convert.ToInt32(game.StockLevels);
 
             if(quantity > 3)
@@ -27,12 +26,14 @@ namespace AlchemyGamesv2._0
                 quantity = 3;
             }
 
-            for(int i = 1; i <= quantity; i++)
+            if(quantity == 1)
             {
-                productQuantity += "<option value="+ i +">"+ i +"</option>" + Environment.NewLine;
+                DropDownList1.Items.Remove("2");
+                DropDownList1.Items.Remove("3");
+            } else if(quantity == 2)
+            {
+                DropDownList1.Items.Remove("3");
             }
-
-            //prodQuant.InnerHtml = productQuantity;
 
             display = "<div class=\"col-sm-6 col-md-4\">" + Environment.NewLine;
             display += "<div class=\"product-images\">" + Environment.NewLine;
@@ -56,16 +57,16 @@ namespace AlchemyGamesv2._0
         {
             List<int> items = ShoppingCart.getCartItems();
             var prodID = Request.QueryString["ID"];
-            int val = Convert.ToInt32(prodQuant.Value);
+            int val = Convert.ToInt32(DropDownList1.SelectedItem.Value);
+            int count = 0;
 
-            if (items != null)
+            if (items.Count > 0)
             {
-                int count = 0;
                 for(int i = 0; i < items.Count; i++)
                 {
-                    if (items.ElementAt(i).Equals(prodID))
+                    if (items.ElementAt(i).Equals(Convert.ToInt32(prodID)))
                     {
-                        count++;
+                        count += 1;
                     }
                 }
 
@@ -78,6 +79,11 @@ namespace AlchemyGamesv2._0
                     ShoppingCart.addItem(Convert.ToInt32(prodID), val);
                     Page.Response.Redirect(Page.Request.Url.ToString(), true);
                 }
+            }
+            else
+            {
+                ShoppingCart.addItem(Convert.ToInt32(prodID), val);
+                Page.Response.Redirect(Page.Request.Url.ToString(), true);
             }
         }
     }

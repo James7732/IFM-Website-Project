@@ -17,15 +17,14 @@ namespace AlchemyGamesv2._0
             }
         }
 
+        public static void removeOne(int id)
+        {
+            CartItems.Remove(id);
+        }
+
         public static void removeItem(int itemToRemove)
         {
-            for(int i = 0; i < CartItems.Count; i++)
-            {
-                if(CartItems.ElementAt(i) == itemToRemove)
-                {
-                    CartItems.RemoveAt(i);
-                }
-            }
+            CartItems.RemoveAll(i => i.Equals(itemToRemove));
         }
 
         public static double getTotal()
@@ -61,10 +60,7 @@ namespace AlchemyGamesv2._0
 
         public static void removeAll()
         {
-            for(int i = CartItems.Count; i < 0; i--)
-            {
-                CartItems.RemoveAt(i);
-            }
+            CartItems.RemoveRange(0, CartItems.Count);
         }
 
         public static int getNumProd(int itemID)
