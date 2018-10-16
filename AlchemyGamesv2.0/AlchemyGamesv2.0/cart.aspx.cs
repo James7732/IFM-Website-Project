@@ -13,6 +13,13 @@ namespace AlchemyGamesv2._0
         protected void Page_Load(object sender, EventArgs e)
         {
             var db = new AlchemyLinkDataContext();
+
+            if (Session["VoucherValue"] != null)
+            {
+                voucherDiscount.Visible = true;
+                voucherDiscount.InnerHtml = "<strong>Discount:</strong> " + (double)Session["VoucherValue"];
+                divVoucher.Visible = false;
+            }
            
             List<int> items = ShoppingCart.getCartItems().Distinct().ToList();
             StringBuilder display = new StringBuilder();
@@ -71,6 +78,10 @@ namespace AlchemyGamesv2._0
             //that should be based on wheather or not the product is hard copy
             //or digital
             Total = subtotal + 50.0;
+            if (Session["VoucherValue"] != null)
+            {
+                Total -= (double)Session["VoucherValue"];
+            }
 
             subTotal.InnerHtml = "<strong> Subtotal:</strong> R"+ subtotal +"";
             total.InnerHtml = "<strong>Total</strong><span class=\"num\">R"+ Total +"";
@@ -89,6 +100,29 @@ namespace AlchemyGamesv2._0
             else
             {
                 Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void BtnVoucher_Click(object sender, EventArgs e)
+        {
+            var db = new AlchemyLinkDataContext();
+            if (vCode.Value != "")
+            {
+                var vouch = (from Voucher v in db.Vouchers
+                             where v.VoucherCode.Equals(vCode.Value)
+                             select v).FirstOrDefault();
+                if (vouch != null && vouch.Quantity > 0)
+                {
+                    vouch.Quantity -= 1;
+                    Session["VoucherValue"] = (double)vouch.Value;
+                    db.SubmitChanges();
+                    Response.Redirect("Cart.aspx");
+                }
+                else
+                {
+                    voucherErr.InnerHtml = "Invalid voucher code";
+                    voucherErr.Visible = true;
+                }
             }
         }
     }
