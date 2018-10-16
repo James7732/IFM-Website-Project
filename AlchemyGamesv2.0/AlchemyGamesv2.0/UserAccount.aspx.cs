@@ -46,7 +46,8 @@ namespace AlchemyGamesv2._0
 
         protected void BtnInvoice_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect(Request.RawUrl);
+            /*
                 var db = new AlchemyLinkDataContext();
                 int UId = (int)Session["UserID"];
                 dynamic invoices = from o in db.Orders
@@ -75,7 +76,7 @@ namespace AlchemyGamesv2._0
                 }
                 UserInfo.Visible = false;
                 Invoices.Visible = true;
-
+                */
         }
 
         protected void BtnUserInfo_Click(object sender, EventArgs e)

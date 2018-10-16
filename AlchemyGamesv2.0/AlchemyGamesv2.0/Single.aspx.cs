@@ -31,7 +31,7 @@ namespace AlchemyGamesv2._0
             iheader.InnerHtml = display;
 
             display = "<h2 class=\"entry-title\">"+ game.Name +"</h2>" + Environment.NewLine;
-            display += "<small class=\"price\">"+ game.Price +"</small>" + Environment.NewLine;
+            display += "<small class=\"price\">"+ String.Format("{0:C2}", game.Price) + "</small>" + Environment.NewLine;
             display += "<p>"+ game.Description +"</p>" + Environment.NewLine;
 
             ibody.InnerHtml = display;

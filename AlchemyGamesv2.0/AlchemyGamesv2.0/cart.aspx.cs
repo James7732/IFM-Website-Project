@@ -33,7 +33,7 @@ namespace AlchemyGamesv2._0
                 display.Append("<p>" + prod.Description +"</p>" + Environment.NewLine);
                 display.Append("</div>" + Environment.NewLine);
                 display.Append("</td>" + Environment.NewLine);
-                display.Append("<td class=\"product-price\">R" + prod.Price +"</td>" + Environment.NewLine);
+                display.Append("<td class=\"product-price\">" + String.Format("{0:C2}", prod.Price) + "</td>" + Environment.NewLine);
                 display.Append("<td class=\"product-qty\">" + Environment.NewLine);
                 display.Append("<select name=\"#\">" + Environment.NewLine);
                 display.Append("<option value=\""+ ShoppingCart.getNumItems() +"\">"+ ShoppingCart.getNumItems() +"</option> " + Environment.NewLine);
