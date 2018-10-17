@@ -10,6 +10,7 @@ using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
+using System.Text;
 
 namespace AlchemyGamesv2._0
 {
@@ -47,7 +48,12 @@ namespace AlchemyGamesv2._0
                 Amount = ShoppingCart.getTotal(),
                 Date = date,
                 Time = time,
-                UserID = Convert.ToInt32(Session["UserID"])
+                UserID = Convert.ToInt32(Session["UserID"]),
+                Address = orderaddress.Value,
+                Suberb = ordersuburb.Value,
+                City = ordercity.Value,
+                PostalCode = ordercode.Value
+
             };
 
             var db = new AlchemyLinkDataContext();
@@ -77,11 +83,71 @@ namespace AlchemyGamesv2._0
                 db.SubmitChanges();
             }
 
-            ShoppingCart.removeAll();
+            
 
             try
             {
-                StringReader sr = new StringReader("Hello");
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<br/>");
+                sb.Append("<h1><font size=10>Alchemy Games Invoice</font></h1>");
+                sb.Append("<br/>");
+                sb.Append("<br/>");
+                sb.Append("<br/>");
+                sb.Append("Customer Details: ");
+                sb.Append("<br/>");
+
+                User user = (from u in db.Users
+                             where u.Id.Equals(Convert.ToInt32(Session["UserID"]))
+                             select u).FirstOrDefault();
+
+                sb.Append(user.FirstName);
+                sb.Append(" ");
+                sb.Append(user.Surname);
+                sb.Append("<br/>");
+                sb.Append(user.Email);
+                sb.Append("<br/>");
+                sb.Append("<br/>");
+                sb.Append("Order Details: ");
+                sb.Append("<br/>");
+
+                double total = ShoppingCart.getTotal() + 50;
+
+                sb.Append("R" + total + " (R50 Shipping)");
+                sb.Append("<br/>");
+                sb.Append(date);
+                sb.Append("<br/>");
+
+
+
+                dynamic invoiceItems = from i in db.Order_Products
+                                       where i.OrderID.Equals(ordedrID.Id)
+                                       select i;
+
+                foreach (Order_Product invItem in invoiceItems)
+                {
+                    Product prod = (from p in db.Products
+                                    where p.Id.Equals(invItem.ProductID)
+                                    select p).FirstOrDefault();
+
+                    sb.Append(prod.Name + " " + prod.Platfrom + " - " + String.Format("{0:C2}", prod.Price) + "<br>");
+                }
+
+                sb.Append("<br/>");
+                sb.Append("<br/>");
+                sb.Append("Shipping Details:");
+                sb.Append("<br/>");
+                sb.Append(orderaddress.Value);
+                sb.Append("<br/>");
+                sb.Append(ordersuburb.Value);
+                sb.Append("<br/>");
+                sb.Append(ordercity.Value);
+                sb.Append("<br/>");
+                sb.Append(orderprovince.Value);
+                sb.Append("<br/>");
+                sb.Append(ordercode.Value);
+
+
+                StringReader sr = new StringReader(sb.ToString());
 
                 Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
                 HTMLWorker html = new HTMLWorker(pdfDoc);
@@ -119,11 +185,15 @@ namespace AlchemyGamesv2._0
                 
             }
 
+            
+
         }
 
         protected void BtnHome_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HomePage.aspx");
+
+            ShoppingCart.removeAll();
+            Response.Redirect("Payment.aspx");
         }
 
     }

@@ -26,7 +26,7 @@
     <asp:Button ID="btnCheckout" runat="server" Text="Check Out" OnClick="BtnCheckout_Click" OnClientClick="this.disabled=true;" UseSubmitBehavior="false"/>
     <br />
     <br />
-    <asp:Button ID="btnHome" runat="server" Text="Return To Home" OnClick="BtnHome_Click" />
+    <asp:Button ID="btnHome" runat="server" Text="Proceed to Pay" OnClick="BtnHome_Click" />
     <br />
     <br />
     </div>

@@ -231,7 +231,7 @@
     <Content Include="js\bannerslider.js" />
     <Content Include="HomePage.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Pdf.aspx" />
+    <Content Include="Payment.aspx" />
     <Content Include="ProductAddition.aspx" />
     <Content Include="ProductDeletion.aspx" />
     <Content Include="Register.aspx" />
@@ -335,12 +335,12 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pdf.aspx.cs">
-      <DependentUpon>Pdf.aspx</DependentUpon>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pdf.aspx.designer.cs">
-      <DependentUpon>Pdf.aspx</DependentUpon>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductAddition.aspx.cs">
       <DependentUpon>ProductAddition.aspx</DependentUpon>
