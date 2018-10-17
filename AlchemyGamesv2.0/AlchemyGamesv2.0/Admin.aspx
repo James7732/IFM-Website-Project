@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AlchemyGames.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="AlchemyGamesv2._0.Admin" %>
+
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -20,6 +22,8 @@
     <%--=========================================================--%>
     <div id="editProd" runat="server" class="tabcontent">
     <br />
+        <div runat="server" id="editList" class="container">  </div>
+    <div id="editPage" runat="server">
             <br />
 
     <div runat="server" id="editname" class="container">
@@ -160,6 +164,7 @@
 
     <br />
     </div>
+    </div>
     <%--=========================================================--%>
     <div id="addProd" runat="server" class="tabcontent">
         <br />
@@ -171,44 +176,44 @@
         <br />
         <br />
 
-        <input type="text" placeholder="Name" runat="server" id="productname" required>
+        <input type="text" placeholder="Name" runat="server" id="productname">
 
         <br />
         <br />
 
-        <input type="number" placeholder="Price" runat="server" id="productprice" required>
+        <input type="number" placeholder="Price" runat="server" id="productprice">
 
         <br />
         <br />
 
-        <input type="text" placeholder="Description" runat="server" id="productdescription" required>
+        <input type="text" placeholder="Description" runat="server" id="productdescription">
 
         <br />
         <br />
 
-        <input type="text" placeholder="Image Link" runat="server" id="productimage" required>
+        <input type="text" placeholder="Image Link" runat="server" id="productimage">
 
         <br />
         <br />
 
-        <input type="number" placeholder="Stock Levels" runat="server" id="productstock" required>
+        <input type="number" placeholder="Stock Levels" runat="server" id="productstock">
 
         <br />
         <br />
 
-        <input type="text" placeholder="Platform" runat="server" id="productplatform" required>
+        <input type="text" placeholder="Platform" runat="server" id="productplatform">
         <label> (PS, PS, Xbox, Nintendo) </label>
 
         <br />
         <br />
 
-        <input type="text" placeholder="Type" runat="server" id="producttype" required>
+        <input type="text" placeholder="Type" runat="server" id="producttype">
         <label> (H = Hardcopy D = Digital) </label>
 
         <br />
         <br />
 
-        <input type="text" placeholder="Genre" runat="server" id="productgenre" required>
+        <input type="text" placeholder="Genre" runat="server" id="productgenre">
 
         <br />
         <br />
@@ -269,11 +274,21 @@
 
             <br />
 
+            <asp:GridView ID="CopiesPerGame" runat="server">
+               <%-- <Columns>
+                    <asp:BoundField DataField="GameID" FooterText="Game ID"/>
+                    <asp:BoundField DataField="GameName" FooterText="Game Name"/>
+                    <asp:BoundField DataField="CopiesSold" FooterText="Copies Sold"/>
+                </Columns>--%>
+            </asp:GridView>
+
+            <br/>
+
             <label> Total Sales Per Month </label>
 
             <br />
 
-            <input type="text" placeholder="Enter Month" runat="server" id="salesmonth"/>
+            <input type="text" placeholder="Enter Month Number" runat="server" id="salesmonth"/>
 
             <asp:Button runat="server" Text="Submit" ID="btnMonth" OnClick="btnMonth_Click"/>
 
@@ -283,6 +298,26 @@
 
             <div runat="server" class="container" id="salespermonth"></div>
 
+              
+
+                <%--<asp:Chart ID="MonthUsers" runat="server">
+                    <Titles>
+                        <asp:Title Text="Total Users Per Day of Month">
+                        </asp:Title>
+                    </Titles>
+                    <Series>
+                        <asp:Series Name="DaysOfMonth" ChartType="Column" ChartArea="ChartArea1">
+                        </asp:Series>
+                    </Series>
+                    <ChartAreas>
+                        <asp:ChartArea Name="ChartArea1">
+                            <AxisX Title="Game">
+                            </AxisX>
+                            <AxisY Title="Total copies sold">
+                            </AxisY>
+                            </asp:ChartArea>
+                    </ChartAreas>
+                </asp:Chart>--%>
         </div>
     </div>
     <%--=========================================================--%>

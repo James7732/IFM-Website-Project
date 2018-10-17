@@ -58,6 +58,24 @@ namespace AlchemyGamesv2._0 {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl editProd;
         
         /// <summary>
+        /// editList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editList;
+        
+        /// <summary>
+        /// editPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl editPage;
+        
+        /// <summary>
         /// editname control.
         /// </summary>
         /// <remarks>
@@ -533,6 +551,15 @@ namespace AlchemyGamesv2._0 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewSalesPerDay;
+        
+        /// <summary>
+        /// CopiesPerGame control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView CopiesPerGame;
         
         /// <summary>
         /// salesmonth control.
