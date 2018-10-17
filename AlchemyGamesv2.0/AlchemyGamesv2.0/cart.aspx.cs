@@ -13,7 +13,7 @@ namespace AlchemyGamesv2._0
         protected void Page_Load(object sender, EventArgs e)
         {
             var db = new AlchemyLinkDataContext();
-
+           
             List<int> items = ShoppingCart.getCartItems().Distinct().ToList();
             StringBuilder display = new StringBuilder();
 
