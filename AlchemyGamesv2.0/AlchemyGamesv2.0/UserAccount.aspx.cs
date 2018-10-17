@@ -20,11 +20,12 @@ namespace AlchemyGamesv2._0
                                    select o;
                 foreach (Order ord in invoices)
                 {
-                    invList.InnerHtml += "<div class='product'>"
-                                      + "<div class='inner-product'>"
-                                      + "Date&Time: " + ord.Date + "<br>"
-                                      + "Invoice Total: " + String.Format("{0:C2}", ord.Amount) + "<br>"
-                                      + "Items bought:" + "<br>";
+                invList.InnerHtml += "<div class='product'>"
+                                  + "<div class='inner-product'>"
+                                  + "Date: " + ord.Date + "<br>"
+                                  + "Invoice Total: " + String.Format("{0:C2}", ord.Amount) + " excl. Shipping @ R50 <br>"
+                                  + "Item/s bought:" + "<br>";
+                                      
                     //get order_product linked to order
                     dynamic invoiceItems = from i in db.Order_Products
                                            where i.OrderID.Equals(ord.Id)
