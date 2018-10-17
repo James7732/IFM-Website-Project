@@ -5,6 +5,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
+using System.Collections;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 
 namespace AlchemyGamesv2._0
 {
@@ -19,16 +24,16 @@ namespace AlchemyGamesv2._0
                          where u.Id.Equals(Convert.ToInt32(Session["UserID"]))
                          select u).FirstOrDefault();
 
-            display = "Review products" + "<br/>";
-            display += "Usernam: " + user.Username + "<br/>";
+            display = "<font size=6>Review Order</font>" + "<br/><br/>";
+            display += "Username: " + user.Username + "<br/><br/>";
             foreach(int id in ShoppingCart.getCartItems())
             {
                 Product prod = (from p in db.Products
                                where p.Id.Equals(id)
                                select p).FirstOrDefault();
 
-                display += "Products name: " + prod.Name + "<br/>";
-                display += "Price: " + prod.Price + "<br/>";
+                display += "Product Name: " + prod.Name + "<br/>";
+                display += "Price: " + String.Format("{0:C2}", prod.Price) + "<br/><br/>";
             }
             cartDetails.InnerHtml = display;
         }
@@ -74,9 +79,52 @@ namespace AlchemyGamesv2._0
 
             ShoppingCart.removeAll();
 
-            cartDetails.InnerHtml = "<h1 style=\"color: red\">Items checked out</h1>";
-            btnCheckout.Visible = false;
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            try
+            {
+                StringReader sr = new StringReader("Hello");
+
+                Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 10f, 0f);
+                HTMLWorker html = new HTMLWorker(pdfDoc);
+
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    html.Parse(sr);
+                    pdfDoc.Close();
+
+                    byte[] buffer = stream.ToArray();
+                    stream.Close();
+
+                    Response.Clear();
+                    Response.ContentType = "application/pdf";
+                    Response.AddHeader("Content-Disposition", "attachment; filename=Invoice.pdf");
+                    Response.Buffer = true;
+                    Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                    Response.BinaryWrite(buffer);
+                    Response.End();
+                    Response.Close();
+
+                    btnCheckout.Enabled = false;
+                }
+
+
+            }
+            catch(Exception e1)
+            {
+                Console.WriteLine(e1);
+
+            }finally
+            {
+                
+            }
+
         }
+
+        protected void BtnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HomePage.aspx");
+        }
+
     }
 }

@@ -7,12 +7,13 @@
 
         <br />
 
-        <label> <font size"6"> Check Out Successful, Invoice Saved to Desktop </font>  </label>
+        <label> <font size"10"> Check Out Successful, Invoice Saved to Desktop </font>  </label>
 
         <br />
 
         <a href="HomePage.aspx"> Click Here to Return to HomePage </a>
 
+        <br />
         <br />
 
     </div>

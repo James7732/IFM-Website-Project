@@ -7,7 +7,26 @@
     <br />
     <p id="cartDetails" runat="server">
     </p>
-    <asp:Button ID="btnCheckout" runat="server" Text="Check Out" OnClick="BtnCheckout_Click" />
+    <br />
+    <input type="text" placeholder="Address" runat="server" id="orderaddress" required>
+    <br />
+    <br />
+    <input type="text" placeholder="Suburb" runat="server" id="ordersuburb" required>
+    <br />
+    <br />
+    <input type="text" placeholder="City" runat="server" id="ordercity" required>
+    <br />
+    <br />
+    <input type="text" placeholder="Province" runat="server" id="orderprovince" required>
+    <br />
+    <br />
+    <input type="number" placeholder="Postal Code" runat="server" id="ordercode" required>
+    <br />
+    <br />
+    <asp:Button ID="btnCheckout" runat="server" Text="Check Out" OnClick="BtnCheckout_Click" OnClientClick="this.disabled=true;" UseSubmitBehavior="false"/>
+    <br />
+    <br />
+    <asp:Button ID="btnHome" runat="server" Text="Return To Home" OnClick="BtnHome_Click" />
     <br />
     <br />
     </div>
