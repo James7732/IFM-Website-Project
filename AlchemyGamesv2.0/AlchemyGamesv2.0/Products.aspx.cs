@@ -84,6 +84,7 @@ namespace AlchemyGamesv2._0
                 if (sortby.Equals("Pop"))
                 {
                     List<int> rejectGames = new List<int>();
+                    List<int> selectedGames = new List<int>();
                     for(int i = 0; i < popGameRating.Count; i++)
                     {
                         Product prodR = popGameRating.ElementAt(i).GetProduct();
@@ -94,6 +95,7 @@ namespace AlchemyGamesv2._0
                             {
                                 if (prod.StockLevels > 0)
                                 {
+                                    selectedGames.Add(prod.Id);
                                     display.Append("<div class=\"product\">" + Environment.NewLine);
                                     display.Append("<div class=\"inner-product\">" + Environment.NewLine);
                                     display.Append("<div class=\"figure-image\">" + Environment.NewLine);
@@ -107,10 +109,23 @@ namespace AlchemyGamesv2._0
                                     display.Append("</div>" + Environment.NewLine);
                                 }
                             }
-                            //else
-                            //{
-                            //    rejectGames.Add(prod.Id);
-                            //}
+                        }
+                    }
+
+                    foreach(Product p in games)
+                    {
+                        Boolean found = false;
+                        foreach(int i in selectedGames)
+                        {
+                            if (p.Id.Equals(i))
+                            {
+                                found = true;
+                            }
+                        }
+
+                        if (!found)
+                        {
+                            rejectGames.Add(p.Id);
                         }
                     }
 
@@ -161,8 +176,9 @@ namespace AlchemyGamesv2._0
                         }
                     }
                 }
-                else if (SortBy.Equals("Low"))
+                else
                 {
+                    testMsg.InnerHtml = "Low reached";
                     dynamic game = from g in db.Products
                                    where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
                                    orderby g.Price ascending
@@ -192,6 +208,7 @@ namespace AlchemyGamesv2._0
                 if (SortBy.Equals("Pop"))
                 {
                     List<int> rejectGames = new List<int>();
+                    List<int> selectedGames = new List<int>();
                     for (int i = 0; i < popGameRating.Count; i++)
                     {
                         Product prodR = popGameRating.ElementAt(i).GetProduct();
@@ -215,10 +232,23 @@ namespace AlchemyGamesv2._0
                                     display.Append("</div>" + Environment.NewLine);
                                 }
                             }
-                            //else
-                            //{
-                            //    rejectGames.Add(prod.Id);
-                            //}
+                        }
+                    }
+
+                    foreach (Product p in games)
+                    {
+                        Boolean found = false;
+                        foreach (int i in selectedGames)
+                        {
+                            if (p.Id.Equals(i))
+                            {
+                                found = true;
+                            }
+                        }
+
+                        if (!found)
+                        {
+                            rejectGames.Add(p.Id);
                         }
                     }
 
@@ -244,7 +274,7 @@ namespace AlchemyGamesv2._0
                         }
                     }
                 }
-                else if (sortby.Equals("High"))
+                else if(sortby.Equals("High"))
                 {
                     dynamic game = from g in db.Products
                                    where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
@@ -269,8 +299,9 @@ namespace AlchemyGamesv2._0
                         }
                     }
                 }
-                else if (SortBy.Equals("Low"))
+                else
                 {
+                    testMsg.InnerHtml = "Low reached";
                     dynamic game = from g in db.Products
                                    where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
                                    orderby g.Price ascending

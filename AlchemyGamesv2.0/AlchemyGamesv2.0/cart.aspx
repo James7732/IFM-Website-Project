@@ -89,6 +89,7 @@
                 <div class="cart-total" id="cartTotal" runat="server">
                     <p id="subTotal" runat="server"> </p>
                     <p><strong>Shipment:</strong> R50.00</p>
+                    <p id="voucherDiscount" runat="server" visible="false"></p>
                     <p class="total" id="total" runat="server"></p>
                     <p>
                         <a href="HomePage.aspx" class="button muted">Continue Shopping</a>
@@ -96,7 +97,12 @@
                     </p>
                 </div>
                 <!-- .cart-total -->
-
+                <div id="divVoucher" runat="server">
+                <asp:Label ID="label1" runat="server"><font size="4">Enter Voucher Code</font></asp:Label><br>
+                <input type="text" placeholder="Voucher Code" runat="server" id="vCode">
+                <asp:Button ID="btnVoucher" runat="server" Text="Submit Voucher Code" OnClick="BtnVoucher_Click" />
+                <p id="voucherErr" runat="server" visible="false"> </p>
+                </div>
             </div>
         </div>
         <!-- .container -->
