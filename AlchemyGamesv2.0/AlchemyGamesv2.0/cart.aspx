@@ -13,11 +13,12 @@
                             <th class="product-name">Product Name</th>
                             <th class="product-price">Price</th>
                             <th class="product-qty">Quantity</th>
-                            <th class="product-total">Total</th>
+                            <th class="product-total">Remove</th>
                             <th class="action"></th>
                         </tr>
                     </thead>
                     <tbody id="cartDisplay" runat="server">
+                        
                         <%--<tr>
                             <td class="product-name">
                                 <div class="product-thumbnail">

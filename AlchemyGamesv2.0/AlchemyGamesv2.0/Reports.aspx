@@ -12,13 +12,36 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <p id="mostSold" runat="server" style="color: red"></p>
+            <asp:GridView ID="GridViewSold" runat="server">
+            </asp:GridView>
+
+            <br />
+
             <asp:GridView ID="GridViewRegistered" runat="server">
             </asp:GridView>
 
             <br />
 
-            <asp:GridView ID="GridViewSold" runat="server">
+            <asp:GridView ID="GridViewSalesPerDay" runat="server">
             </asp:GridView>
+
+            <br />
+
+            <label> Total Sales Per Month </label>
+
+            <br />
+
+            <input type="text" placeholder="Enter Month" runat="server" id="salesmonth"/>
+
+            <asp:Button runat="server" Text="Submit" ID="btnMonth" OnClick="btnMonth_Click"/>
+
+            <br />
+
+            <label> Sales:  </label>
+
+            <div runat="server" class="container" id="salespermonth"></div>
+
         </div>
     </form>
 </body>

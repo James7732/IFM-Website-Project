@@ -8,13 +8,6 @@ using System.Web.UI.WebControls;
 
 namespace AlchemyGamesv2._0
 {
-    //<a href = "#" class="page-number"><i class="fa fa-angle-left"></i></a>
-	//<span class="page-number current">1</span>
-	//<a href = "#" class="page-number">2</a>
-	//<a href = "#" class="page-number">3</a>
-	//<a href = "#" class="page-number">...</a>
-	//<a href = "#" class="page-number">12</a>
-	//<a href = "#" class="page-number"><i class="fa fa-angle-right"></i></a>
     public partial class Products : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +16,6 @@ namespace AlchemyGamesv2._0
             var gametype = gameType.Value;
             var sortby = SortBy.Value;
             var genre = GameGenre.Value;
-            //var numgames = NumGames.Value;
 
             switch (pageType)
             {
@@ -91,6 +83,7 @@ namespace AlchemyGamesv2._0
             {
                 if (sortby.Equals("Pop"))
                 {
+                    List<int> rejectGames = new List<int>();
                     for(int i = 0; i < popGameRating.Count; i++)
                     {
                         Product prodR = popGameRating.ElementAt(i).GetProduct();
@@ -114,6 +107,32 @@ namespace AlchemyGamesv2._0
                                     display.Append("</div>" + Environment.NewLine);
                                 }
                             }
+                            //else
+                            //{
+                            //    rejectGames.Add(prod.Id);
+                            //}
+                        }
+                    }
+
+                    for(int i = 0; i < rejectGames.Count; i++)
+                    {
+                        Product prod = (from p in db.Products
+                                        where p.Id.Equals(rejectGames.ElementAt(i))
+                                        select p).FirstOrDefault();
+
+                        if (prod.StockLevels > 0)
+                        {
+                            display.Append("<div class=\"product\">" + Environment.NewLine);
+                            display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                            display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                            display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                            display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                            display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                            display.Append("<br />");
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
                         }
                     }
                 }
@@ -141,9 +160,8 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    //prodList.InnerHtml = display.ToString();
-                    //display.Clear();
-                } else if (SortBy.Equals("Low"))
+                }
+                else if (SortBy.Equals("Low"))
                 {
                     dynamic game = from g in db.Products
                                    where g.Platfrom.Equals(pageType) && g.Type.Equals(gametype)
@@ -167,14 +185,13 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    //prodList.InnerHtml = display.ToString();
-                    //display.Clear();
                 }
             }
             else
             {
                 if (SortBy.Equals("Pop"))
                 {
+                    List<int> rejectGames = new List<int>();
                     for (int i = 0; i < popGameRating.Count; i++)
                     {
                         Product prodR = popGameRating.ElementAt(i).GetProduct();
@@ -198,10 +215,34 @@ namespace AlchemyGamesv2._0
                                     display.Append("</div>" + Environment.NewLine);
                                 }
                             }
+                            //else
+                            //{
+                            //    rejectGames.Add(prod.Id);
+                            //}
                         }
                     }
-                    //prodList.InnerHtml = display.ToString();
-                    //display.Clear();
+
+                    for (int i = 0; i < rejectGames.Count; i++)
+                    {
+                        Product prod = (from p in db.Products
+                                        where p.Id.Equals(rejectGames.ElementAt(i))
+                                        select p).FirstOrDefault();
+
+                        if ((prod.StockLevels > 0) && (prod.Genre.Equals(genre)))
+                        {
+                            display.Append("<div class=\"product\">" + Environment.NewLine);
+                            display.Append("<div class=\"inner-product\">" + Environment.NewLine);
+                            display.Append("<div class=\"figure-image\">" + Environment.NewLine);
+                            display.Append("<a href =\"single.aspx?ID=" + prod.Id + "\">" + Environment.NewLine);
+                            display.Append("<img src=\"" + prod.ImageLink + "\"></a>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("<h3 class=\"product-title\"><a href=\"Single.aspx?ID=" + prod.Id + "\">" + prod.Name + "</a></h3>" + Environment.NewLine);
+                            display.Append("<small class=\"price\">" + String.Format("{0:C2}", prod.Price) + "</small>" + Environment.NewLine);
+                            display.Append("<br />");
+                            display.Append("</div>" + Environment.NewLine);
+                            display.Append("</div>" + Environment.NewLine);
+                        }
+                    }
                 }
                 else if (sortby.Equals("High"))
                 {
@@ -227,8 +268,6 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    //prodList.InnerHtml = display.ToString();
-                    //display.Clear();
                 }
                 else if (SortBy.Equals("Low"))
                 {
@@ -254,8 +293,6 @@ namespace AlchemyGamesv2._0
                             display.Append("</div>" + Environment.NewLine);
                         }
                     }
-                    //prodList.InnerHtml = display.ToString();
-                    //display.Clear();
                 }
             }
             prodList.InnerHtml = display.ToString();

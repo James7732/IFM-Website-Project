@@ -75,6 +75,8 @@ namespace AlchemyGamesv2._0
             ShoppingCart.removeAll();
 
             cartDetails.InnerHtml = "<h1 style=\"color: red\">Items checked out</h1>";
+            btnCheckout.Visible = false;
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }
