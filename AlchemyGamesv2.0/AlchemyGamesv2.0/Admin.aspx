@@ -284,6 +284,16 @@
 
             <br/>
 
+                <asp:GridView ID="MostGamesSold" runat="server">
+               <%-- <Columns>
+                    <asp:BoundField DataField="GameID" FooterText="Game ID"/>
+                    <asp:BoundField DataField="GameName" FooterText="Game Name"/>
+                    <asp:BoundField DataField="CopiesSold" FooterText="Copies Sold"/>
+                </Columns>--%>
+            </asp:GridView>
+
+            <br/>
+
             <label> Total Sales Per Month </label>
 
             <br />

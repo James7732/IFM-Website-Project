@@ -25,7 +25,7 @@ namespace AlchemyGamesv2._0
 
             if (!IsPostBack)
             {
-                //MostCopiesSold();
+                MostCopiesSold();
                 TotalSoldPerGame();
                 RegisteredUsers();
                 ProductsSold();
@@ -110,16 +110,22 @@ namespace AlchemyGamesv2._0
             int id = Convert.ToInt32(productid.Value);
 
             var product = from p in database.Products where p.Id.Equals(id) select p;
+            var op = from s in database.Order_Products where s.ProductID.Equals(id) select s;
 
-            foreach (var p in product)
+            foreach (var q in op)
             {
-                database.Products.DeleteOnSubmit(p);
+                database.Order_Products.DeleteOnSubmit(q);
+                foreach (var p in product)
+                {
+
+                    database.Products.DeleteOnSubmit(p);
+                }
             }
 
             try
             {
                 database.SubmitChanges();
-                Response.Redirect("ProductDeletion.aspx");
+                Response.Redirect("Admin.aspx");
 
 
             }
@@ -132,8 +138,9 @@ namespace AlchemyGamesv2._0
 
         protected void btnMonth_Click(object sender, EventArgs e)
         {
-            SalesPerMonth();
-            Response.Redirect("Admin.aspx?Id=report");
+
+            //Response.Redirect("Admin.aspx?Id=report");
+            Response.Redirect("Reports.aspx");
         }
 
         protected void BtnEditProd_Click(object sender, EventArgs e)
@@ -417,7 +424,23 @@ namespace AlchemyGamesv2._0
                          select prod).FirstOrDefault();
 
             //p contains the product that sold the most copies. The most baught game...
+
+            DataTable table = makeTable("Most Copies Sold");
+            
+                
+                DataRow row = table.NewRow();
+                row["ID"] = p.Id;
+                row["GameName"] = p.Name;
+                row["CopiesSold"] = most;
+                table.Rows.Add(row);
+            
+
+            MostGamesSold.DataSource = table;
+            //CopiesPerGame.DataSource = copies;
+            MostGamesSold.DataBind();
         }
+
+       
 
         private void TotalSoldPerGame()
         {
@@ -453,7 +476,7 @@ namespace AlchemyGamesv2._0
                 totalPerGame.Add(game);
             }
 
-            DataTable table = makeTable();
+            DataTable table = makeTable("Total Copies Sold");
             for(int i = 0; i < totalPerGame.Count; i++)
             {
                 var prod = totalPerGame.ElementAt(i).GetProduct();
@@ -477,9 +500,9 @@ namespace AlchemyGamesv2._0
             //}
         }
 
-        private DataTable makeTable()
+        private DataTable makeTable(string name)
         {
-            DataTable gamesTable = new DataTable("Copies Sold Per Game");
+            DataTable gamesTable = new DataTable(name);
 
             DataColumn idCol = new DataColumn();
             idCol.DataType = System.Type.GetType("System.Int32");

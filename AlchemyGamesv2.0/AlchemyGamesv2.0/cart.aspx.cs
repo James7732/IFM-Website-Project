@@ -17,7 +17,7 @@ namespace AlchemyGamesv2._0
             if (Session["VoucherValue"] != null)
             {
                 voucherDiscount.Visible = true;
-                voucherDiscount.InnerHtml = "<strong>Discount:</strong> " + (double)Session["VoucherValue"];
+                voucherDiscount.InnerHtml = "<strong>Discount:</strong> " + String.Format("{0:C2}", (double)Session["VoucherValue"]);
                 divVoucher.Visible = false;
             }
            

@@ -34,11 +34,19 @@ namespace AlchemyGamesv2._0
             int id = Convert.ToInt32(productid.Value);
 
             var product = from p in database.Products where p.Id.Equals(id) select p;
+            var op = from s in database.Order_Products where s.ProductID.Equals(id) select s;
 
-            foreach(var p in product)
+            foreach(var q in op)
             {
-                database.Products.DeleteOnSubmit(p);
+                database.Order_Products.DeleteOnSubmit(q);
+                foreach (var p in product)
+                {
+
+                    database.Products.DeleteOnSubmit(p);
+                }
             }
+
+            
             
             try
             {

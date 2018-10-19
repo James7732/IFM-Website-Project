@@ -30,6 +30,7 @@ namespace AlchemyGamesv2._0
         protected void btnMonth_Click(object sender, EventArgs e)
         {
             SalesPerMonth();
+           // Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
 
         private void RegisteredUsers()

@@ -111,6 +111,10 @@ namespace AlchemyGamesv2._0
                 sb.Append("<br/>");
 
                 double total = ShoppingCart.getTotal() + 50;
+                if (Session["VoucherValue"] != null)
+                {
+                    total -= (double)Session["VoucherValue"];
+                }
 
                 sb.Append("R" + total + " (R50 Shipping)");
                 sb.Append("<br/>");
